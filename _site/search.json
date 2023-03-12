@@ -11,7 +11,7 @@
     "href": "index.html#cerimônia-e-festa",
     "title": "Beatriz & Julio",
     "section": "Cerimônia e festa",
-    "text": "Cerimônia e festa\nA cerimônia e a festa de casamento acontecerão no Sítio São Jorge - Demarchi, que fica em São Bernardo do Campo - SP."
+    "text": "Cerimônia e festa\nA cerimônia e a festa de casamento acontecerão no Sítio São Jorge - Demarchi, que fica em São Bernardo do Campo - SP.\n\n\n\n\n\n\nCerimônia - Sítio São Jorge - Demarchi\n\n\n\n\n\nFesta - Sítio São Jorge - Demarchi"
   },
   {
     "objectID": "index.html#galeria-de-fotos",
@@ -54,5 +54,40 @@
     "title": "Lista de presentes",
     "section": "Móveis e eletrodomésticos",
     "text": "Móveis e eletrodomésticos"
+  },
+  {
+    "objectID": "galeria.html",
+    "href": "galeria.html",
+    "title": "Galeria de fotos",
+    "section": "",
+    "text": "2023 - Bea e Ju no treinão da Alice"
+  },
+  {
+    "objectID": "mural-mensagens.html",
+    "href": "mural-mensagens.html",
+    "title": "Mural de mensagens",
+    "section": "",
+    "text": "Em breve!"
+  },
+  {
+    "objectID": "confirmar-presenca.html",
+    "href": "confirmar-presenca.html",
+    "title": "Confirmar presença",
+    "section": "",
+    "text": "Em breve!"
+  },
+  {
+    "objectID": "lista-de-presentes.html#móveis",
+    "href": "lista-de-presentes.html#móveis",
+    "title": "Lista de presentes",
+    "section": "Móveis",
+    "text": "Móveis"
+  },
+  {
+    "objectID": "lista-de-presentes.html#eletrodomésticos",
+    "href": "lista-de-presentes.html#eletrodomésticos",
+    "title": "Lista de presentes",
+    "section": "Eletrodomésticos",
+    "text": "Eletrodomésticos"
   }
 ]

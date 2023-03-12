@@ -107,7 +107,16 @@ planilha_presentes |>
 ```
 
 
-## Móveis e eletrodomésticos
+## Móveis
+
+
+```{r}
+planilha_presentes |> 
+  dplyr::filter(categoria == "moveis") |> 
+  gerar_tabela_presentes()
+```
+
+## Eletrodomésticos
 
 
 ```{r}

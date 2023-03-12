@@ -1,0 +1,15 @@
+---
+title: "Galeria de fotos"
+filters:
+  - lightbox
+lightbox: auto
+knitr:
+  opts_chunk: 
+    echo: false
+    message: false
+toc: false
+---
+
+::: {layout="[[1, 1, 1]]"}
+![2023 - Bea e Ju no treinão da Alice](images/treinao-alice.jpeg){group="fotos"}
+:::

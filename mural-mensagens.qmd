@@ -1,0 +1,13 @@
+---
+title: "Mural de mensagens"
+filters:
+  - lightbox
+lightbox: auto
+knitr:
+  opts_chunk: 
+    echo: false
+    message: false
+toc: false
+---
+
+Em breve!

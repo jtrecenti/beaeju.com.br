@@ -2,13 +2,12 @@ website:
   title: "Beatriz e Julio"
   navbar:
     left:
-      - href: index.qmd
-        text: Página inicial
+      - href: galeria.qmd
+      - href: mural-mensagens.qmd
       - href: lista-de-presentes.qmd
+      - href: confirmar-presenca.qmd
+      
         
-    right:
-      - href: ./en/
-        text: English      
         
         
 lang: pt        

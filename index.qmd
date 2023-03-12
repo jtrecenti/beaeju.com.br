@@ -10,21 +10,26 @@ toc: false
 
 **Data:** 14/10/2023 às 10h00
 
-
-
 Em breve mais informações sobre o casamento da Bea e do Ju!
-
 
 ## Cerimônia e festa
 
 A cerimônia e a festa de casamento acontecerão no Sítio São Jorge - Demarchi, que fica em São Bernardo do Campo - SP.
 
-<center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.1320010327113!2d-46.55851888255615!3d-23.7426718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce41f095751b05%3A0x717e6ca7adcda395!2sS%C3%ADtio%20S%C3%A3o%20Jorge%20-%20Demarchi!5e0!3m2!1sen!2sbr!4v1678569938337!5m2!1sen!2sbr" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><center>
+<center>
 
+::: {layout="[[1,1]]"}
+![Cerimônia - Sítio São Jorge - Demarchi](images/demarchi.jpeg){group="espaco"}
 
-## Galeria de fotos
-
-::: {layout="[[1, 1, 1]]"}
-![2023 - Bea e Ju no treinão da Alice](images/treinao-alice.jpeg){group="fotos"}
+![Festa - Sítio São Jorge - Demarchi](images/demarchi2.jpeg){group="espaco"}
 :::
 
+</center>
+
+<center>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.1320010327113!2d-46.55851888255615!3d-23.7426718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce41f095751b05%3A0x717e6ca7adcda395!2sS%C3%ADtio%20S%C3%A3o%20Jorge%20-%20Demarchi!5e0!3m2!1sen!2sbr!4v1678569938337!5m2!1sen!2sbr" width="80%" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+
+</iframe>
+
+<center>
