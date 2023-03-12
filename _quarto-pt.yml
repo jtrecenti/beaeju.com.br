@@ -1,0 +1,14 @@
+website:
+  title: "Beatriz e Julio"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Página inicial
+      - href: lista-de-presentes.qmd
+        
+    right:
+      - href: ./en/
+        text: English      
+        
+        
+lang: pt        

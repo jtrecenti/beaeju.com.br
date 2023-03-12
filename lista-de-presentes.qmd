@@ -1,0 +1,117 @@
+---
+title: "Lista de presentes"
+filters:
+  - lightbox
+lightbox: auto
+knitr:
+  opts_chunk: 
+    echo: false
+    message: false
+toc: false
+---
+
+```{r}
+url_sheets <- "https://docs.google.com/spreadsheets/d/1_VsPKJZ6wz2HvabvGI6V-oW-1923KE_FyfKsvy-T2yc/edit#gid=0"
+
+googlesheets4::gs4_auth(email = "milz.bea@gmail.com")
+
+planilha_presentes <- googlesheets4::read_sheet(url_sheets) |> 
+  dplyr::arrange(estimativa_preco) |> 
+  dplyr::mutate(foto = dplyr::if_else(is.na(foto), "presente.jpg", foto),
+                foto = dplyr::if_else(!stringr::str_starts(foto, "http"),
+                                      paste0("images/lista-de-presenca/", foto), foto),
+    foto = glue::glue("<img src='{foto}' style='max-width: 100%;'>"),
+                status = dplyr::case_when(
+                status == "FALSE" ~ "TODO",
+                status == "TRUE" ~ "Já fomos presenteados! Agradecemos muito."))
+
+
+gerar_tabela_presentes <- function(tabela) {
+  tabela |>
+    dplyr::select(-categoria,-opcao_1) |>
+    dplyr::relocate(foto, .before = tidyselect::everything()) |>
+    reactable::reactable(
+      sortable = TRUE,
+      filterable = FALSE,
+      columns = list(
+        item = reactable::colDef(name = "Item", width = 200),
+        estimativa_preco = reactable::colDef(
+          name = "Preço",
+          format = reactable::colFormat(
+            prefix = "R$ ",
+            separators = TRUE,
+            locales = "pt"
+          ),
+          width = 100
+        ),
+        foto = reactable::colDef(
+          name = "Foto",
+          html = TRUE
+        ),
+        status = reactable::colDef(name = "Presentear",
+          html = TRUE)
+      )
+    ) 
+    
+  
+
+
+
+}
+
+
+# item_lista <- function(linha) {
+#   glue::glue("![{linha$item}]({linha$foto}){group='{linha$categoria}'} <br>")
+# }
+
+```
+
+
+
+## Utensílios domésticos
+
+
+```{r}
+planilha_presentes |> 
+  dplyr::filter(categoria == "utensilios_domesticos") |> 
+  gerar_tabela_presentes()
+```
+
+
+## Cama, mesa e banho
+
+
+```{r}
+planilha_presentes |> 
+  dplyr::filter(categoria == "cama_mesa_banho") |> 
+  gerar_tabela_presentes()
+```
+
+
+
+## Mimos para a Noiva
+
+```{r}
+planilha_presentes |> 
+  dplyr::filter(categoria == "mimos_noiva") |> 
+  gerar_tabela_presentes()
+```
+
+
+## Mimos para o Noivo
+
+```{r}
+planilha_presentes |> 
+  dplyr::filter(categoria == "mimos_noivo") |> 
+  gerar_tabela_presentes()
+```
+
+
+## Móveis e eletrodomésticos
+
+
+```{r}
+planilha_presentes |> 
+  dplyr::filter(categoria == "eletrodomesticos") |> 
+  gerar_tabela_presentes()
+```

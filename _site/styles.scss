@@ -1,0 +1,57 @@
+/*-- scss:defaults --*/
+
+/* css styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&display=swap');
+
+.navbar {
+  background-color: #b34838;
+}
+
+
+
+#quarto-content{
+  background-color: #ece6e5;
+}
+
+.sidebar nav[role="doc-toc"] ul > li > a.active {
+  border-left: 1px solid #23593a;
+  color: #23593a !important;
+}
+
+a {
+  color: #23593a;
+}
+
+a:hover {
+  color: #23593a;
+  border-bottom: 1px solid #23593a;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4em;
+  color: #224330;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2, .h2 {
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: .5rem;
+  text-align: center;
+    font-family: 'Great Vibes', cursive;
+      font-size: 3em;
+  color: #224330;
+}
+
+
+.img-fluid{
+  border-style: groove;
+}
+
+.cell {
+  border-style: groove;
+}
