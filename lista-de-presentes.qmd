@@ -1,5 +1,5 @@
 ---
-title: "Lista de presentes"
+title: "Lista de Presentes"
 filters:
   - lightbox
 lightbox: auto

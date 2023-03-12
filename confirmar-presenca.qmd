@@ -1,5 +1,5 @@
 ---
-title: "Confirmar presença"
+title: "Confirmar Presença"
 filters:
   - lightbox
 lightbox: auto

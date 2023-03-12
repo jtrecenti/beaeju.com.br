@@ -1,5 +1,5 @@
 ---
-title: "Mural de mensagens"
+title: "Mural de Mensagens"
 filters:
   - lightbox
 lightbox: auto
