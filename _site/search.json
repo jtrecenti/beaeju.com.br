@@ -89,5 +89,33 @@
     "title": "Lista de Presentes",
     "section": "Eletrodomésticos",
     "text": "Eletrodomésticos"
+  },
+  {
+    "objectID": "cerimonia.html",
+    "href": "cerimonia.html",
+    "title": "Cerimônia e Festa",
+    "section": "",
+    "text": "A cerimônia e a festa de casamento acontecerão no Sítio São Jorge - Demarchi, que fica em São Bernardo do Campo - SP."
+  },
+  {
+    "objectID": "cerimonia.html#mapa",
+    "href": "cerimonia.html#mapa",
+    "title": "Cerimônia e Festa",
+    "section": "Mapa",
+    "text": "Mapa"
+  },
+  {
+    "objectID": "lista-de-presentes.html",
+    "href": "lista-de-presentes.html",
+    "title": "Lista de Presentes",
+    "section": "",
+    "text": "Esta lista de presentes é uma lista com alguns produtos fictícios, onde cada um deles representa um valor que será convertido em dinheiro. Usaremos o dinheiro para comprar os itens descritos na lista, porém seguindo uma ordem de prioridade (por exemplo: uma geladeira é mais importante que um curso, etc)."
+  },
+  {
+    "objectID": "lista-de-presentes.html#eletroportáteis",
+    "href": "lista-de-presentes.html#eletroportáteis",
+    "title": "Lista de Presentes",
+    "section": "Eletroportáteis",
+    "text": "Eletroportáteis"
   }
 ]

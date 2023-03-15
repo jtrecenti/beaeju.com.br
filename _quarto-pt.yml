@@ -2,6 +2,7 @@ website:
   title: "Beatriz e Julio"
   navbar:
     left:
+      - href: cerimonia.qmd    
       - href: galeria.qmd
       - href: mural-mensagens.qmd
       - href: lista-de-presentes.qmd
