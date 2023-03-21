@@ -10,6 +10,35 @@ knitr:
 toc: false
 ---
 
-::: {layout="[[1, 1, 1]]"}
-![2023 - Bea e Ju no treinão da Alice](images/treinao-alice.jpeg){group="fotos"}
+Fala se esse casal não é muito fofo? Clique para abrir o álbum! Se quiser, você também pode ver no <a href="https://photos.app.goo.gl/hb3acxd5F6paPSYS9" target="_blank">Google Photos por aqui</a>.
+
+::: {layout-ncol=6}
+
+```{r}
+#| label: galeria-de-fotos-demora
+#| results: asis
+r <- httr::GET("https://photos.app.goo.gl/hb3acxd5F6paPSYS9")
+baixar <- function(x) {
+  f <- paste0("images/galeria/", basename(x), ".jpg")
+  if (!file.exists(f)) {
+    wd <- httr::write_disk(f, TRUE)
+    r <- httr::GET(x, wd)
+    linhas <- nrow(httr::content(r))
+    if (linhas < 200) fs::file_delete(f)
+  }
+  f
+}
+links <- httr::content(r, "text") |> 
+  stringr::str_extract_all("https://lh3\\.googleusercontent\\.com/[^\"]+") |> 
+  dplyr::first() |> 
+  stringr::str_replace("=w[0-9]+-h[0-9]+", "=w640-h480") |> 
+  unique()
+
+purrr::walk(links, purrr::possibly(baixar))
+
+stringr::str_glue('![]({fs::dir_ls("images/galeria")}){{group="fotos"}}\n\n')
+```
+
 :::
+
+
