@@ -10,24 +10,33 @@ knitr:
 toc: false
 ---
 
-Esta lista de presentes é uma lista com alguns produtos fictícios, onde cada um deles representa um valor que será convertido em dinheiro. Usaremos o dinheiro para comprar os itens descritos na lista, porém seguindo uma ordem de prioridade (por exemplo: uma geladeira é mais importante que um curso, etc).
+Esta lista de presentes é feita de produtos fictícios. Cada item ou cota representa um valor que será convertido em dinheiro.
+
+Lembre-se que o presente é completamente opcional! O que mais queremos é a presença de pessoas queridas e que torcem pela nossa felicidade!
 
 
 ```{r include=FALSE}
 url_sheets <- "https://docs.google.com/spreadsheets/d/1_VsPKJZ6wz2HvabvGI6V-oW-1923KE_FyfKsvy-T2yc/edit#gid=0"
 
-googlesheets4::gs4_auth(email = "milz.bea@gmail.com")
+googlesheets4::gs4_auth(email = Sys.getenv("GSHEETS_EMAIL"))
 
 planilha_presentes <- googlesheets4::read_sheet(url_sheets) |> 
   dplyr::arrange(estimativa_preco) |> 
-  dplyr::mutate(foto = dplyr::if_else(is.na(foto), "presente.jpg", foto),
-                foto = dplyr::if_else(!stringr::str_starts(foto, "http"),
-                                      paste0("images/lista-de-presenca/", foto), foto),
+  dplyr::mutate(
+    foto = dplyr::if_else(is.na(foto), "presente.jpg", foto),
+    foto = dplyr::if_else(
+      !stringr::str_starts(foto, "http"),
+      paste0("images/lista-de-presenca/", foto), foto
+    ),
     foto = glue::glue("<img src='{foto}' style='max-width: 100%;'>"),
-                status = dplyr::case_when(
-                status == "FALSE" ~ "TODO",
-                status == "TRUE" ~ "Já fomos presenteados! Agradecemos muito."),
-    preco_cota = round(preco_cota))
+    status = dplyr::case_when(
+      !status & !is.na(pix_img) ~ as.character(glue::glue("<div class='quarto-figure quarto-figure-center'><figure class='figure'><p><a href='{pix_img}' class='lightbox' data-gallery='pix'><img src='{pix_img}' class='img-fluid figure-img'/></a></p></figure></div>")),
+      is.na(pix_img) ~ "",
+      TRUE ~ "Já fomos presenteados! Agradecemos muito."
+    ),
+    preco_cota = round(preco_cota)
+  ) |> 
+  dplyr::select(-pix_code, -pix_img)
 
 
 gerar_tabela_presentes <- function(tabela) {
@@ -37,6 +46,7 @@ gerar_tabela_presentes <- function(tabela) {
     reactable::reactable(
       sortable = TRUE,
       filterable = FALSE,
+      pagination = FALSE,
       columns = list(
         item = reactable::colDef(name = "Item", minWidth = 200),
         estimativa_preco = reactable::colDef(
@@ -63,14 +73,16 @@ gerar_tabela_presentes <- function(tabela) {
           name = "Foto",
           html = TRUE
         ),
-        status = reactable::colDef(name = "Presentear",
-          html = TRUE)
+        status = reactable::colDef(name = "Presentear", html = TRUE)
       )
     ) 
 
 }
 
 ```
+
+
+
 
 ```{r include=FALSE}
 ## Utensílios domésticos
@@ -91,12 +103,21 @@ planilha_presentes |>
   gerar_tabela_presentes()
 ```
 
-
 ## Mimos para o Noivo
 
 ```{r}
 planilha_presentes |> 
   dplyr::filter(categoria == "mimos_noivo") |> 
+  gerar_tabela_presentes()
+```
+
+
+## Lua de Mel
+
+```{r}
+planilha_presentes |> 
+  dplyr::filter(categoria == "luademel") |> 
+  dplyr::arrange(dplyr::desc(estimativa_preco)) |> 
   gerar_tabela_presentes()
 ```
 
@@ -107,7 +128,6 @@ planilha_presentes |>
   dplyr::filter(categoria == "eletroportateis") |> 
   gerar_tabela_presentes()
 ```
-
 
 ## Móveis
 
@@ -122,5 +142,15 @@ planilha_presentes |>
 ```{r}
 planilha_presentes |> 
   dplyr::filter(categoria == "eletrodomesticos") |> 
+  gerar_tabela_presentes()
+```
+
+## chatgpt
+
+É, não foi fácil pensar na lista de presentes. Então pedimos para o chatGPT ajudar! As imagens foram geradas pelo DALL-E.
+
+```{r}
+planilha_presentes |> 
+  dplyr::filter(categoria == "chatgpt") |> 
   gerar_tabela_presentes()
 ```
