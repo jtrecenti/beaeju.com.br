@@ -1,38 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Beatriz & Julio",
+    "objectID": "lista-de-presentes.html",
+    "href": "lista-de-presentes.html",
+    "title": "Lista de Presentes",
     "section": "",
-    "text": "Data: 14/10/2023 às 10h00\nEm breve mais informações sobre o casamento da Bea e do Ju!"
-  },
-  {
-    "objectID": "index.html#cerimônia-e-festa",
-    "href": "index.html#cerimônia-e-festa",
-    "title": "Beatriz & Julio",
-    "section": "Cerimônia e Festa",
-    "text": "Cerimônia e Festa\nA cerimônia e a festa de casamento acontecerão no Sítio São Jorge - Demarchi, que fica em São Bernardo do Campo - SP.\n\n\n\n\n\n\nCerimônia - Sítio São Jorge - Demarchi\n\n\n\n\n\nFesta - Sítio São Jorge - Demarchi"
-  },
-  {
-    "objectID": "index.html#galeria-de-fotos",
-    "href": "index.html#galeria-de-fotos",
-    "title": "Beatriz & Julio",
-    "section": "Galeria de fotos",
-    "text": "Galeria de fotos\n\n\n\n\n\n2023 - Bea e Ju no treinão da Alice"
-  },
-  {
-    "objectID": "lista-de-presentes.html#utensílios-domésticos",
-    "href": "lista-de-presentes.html#utensílios-domésticos",
-    "title": "Lista de Presentes",
-    "section": "Utensílios domésticos",
-    "text": "Utensílios domésticos"
-  },
-  {
-    "objectID": "lista-de-presentes.html#cama-mesa-e-banho",
-    "href": "lista-de-presentes.html#cama-mesa-e-banho",
-    "title": "Lista de Presentes",
-    "section": "Cama, mesa e banho",
-    "text": "Cama, mesa e banho"
+    "text": "Esta lista de presentes é feita de produtos fictícios. Cada item ou cota representa um valor que será convertido em dinheiro.\nLembre-se que o presente é completamente opcional! O que mais queremos é a presença de pessoas queridas e que torcem pela nossa felicidade!"
   },
   {
     "objectID": "lista-de-presentes.html#mimos-para-a-noiva",
@@ -49,32 +21,11 @@
     "text": "Mimos para o Noivo"
   },
   {
-    "objectID": "lista-de-presentes.html#móveis-e-eletrodomésticos",
-    "href": "lista-de-presentes.html#móveis-e-eletrodomésticos",
-    "title": "Lista de presentes",
-    "section": "Móveis e eletrodomésticos",
-    "text": "Móveis e eletrodomésticos"
-  },
-  {
-    "objectID": "galeria.html",
-    "href": "galeria.html",
-    "title": "Galeria de Fotos",
-    "section": "",
-    "text": "2023 - Bea e Ju no treinão da Alice"
-  },
-  {
-    "objectID": "mural-mensagens.html",
-    "href": "mural-mensagens.html",
-    "title": "Mural de Mensagens",
-    "section": "",
-    "text": "Em breve!"
-  },
-  {
-    "objectID": "confirmar-presenca.html",
-    "href": "confirmar-presenca.html",
-    "title": "Confirmar Presença",
-    "section": "",
-    "text": "Em breve!"
+    "objectID": "lista-de-presentes.html#eletroportáteis",
+    "href": "lista-de-presentes.html#eletroportáteis",
+    "title": "Lista de Presentes",
+    "section": "Eletroportáteis",
+    "text": "Eletroportáteis"
   },
   {
     "objectID": "lista-de-presentes.html#móveis",
@@ -91,6 +42,20 @@
     "text": "Eletrodomésticos"
   },
   {
+    "objectID": "mural-mensagens.html",
+    "href": "mural-mensagens.html",
+    "title": "Mural de Mensagens",
+    "section": "",
+    "text": "Em breve!"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Beatriz & Julio",
+    "section": "",
+    "text": "Data: 14/10/2023 às 10h00\nEm breve mais informações sobre o casamento da Bea e do Ju!"
+  },
+  {
     "objectID": "cerimonia.html",
     "href": "cerimonia.html",
     "title": "Cerimônia e Festa",
@@ -105,17 +70,31 @@
     "text": "Mapa"
   },
   {
-    "objectID": "lista-de-presentes.html",
-    "href": "lista-de-presentes.html",
-    "title": "Lista de Presentes",
+    "objectID": "confirmar-presenca.html",
+    "href": "confirmar-presenca.html",
+    "title": "Confirmar Presença",
     "section": "",
-    "text": "Esta lista de presentes é uma lista com alguns produtos fictícios, onde cada um deles representa um valor que será convertido em dinheiro. Usaremos o dinheiro para comprar os itens descritos na lista, porém seguindo uma ordem de prioridade (por exemplo: uma geladeira é mais importante que um curso, etc)."
+    "text": "Em breve!"
   },
   {
-    "objectID": "lista-de-presentes.html#eletroportáteis",
-    "href": "lista-de-presentes.html#eletroportáteis",
+    "objectID": "galeria.html",
+    "href": "galeria.html",
+    "title": "Galeria de Fotos",
+    "section": "",
+    "text": "Fala se esse casal não é muito fofo? Clique para abrir o álbum! Se quiser, você também pode ver no Google Photos por aqui."
+  },
+  {
+    "objectID": "lista-de-presentes.html#chatgpt",
+    "href": "lista-de-presentes.html#chatgpt",
     "title": "Lista de Presentes",
-    "section": "Eletroportáteis",
-    "text": "Eletroportáteis"
+    "section": "chatgpt",
+    "text": "chatgpt\nÉ, não foi fácil pensar na lista de presentes. Então pedimos para o chatGPT ajudar! As imagens foram geradas pelo DALL-E."
+  },
+  {
+    "objectID": "lista-de-presentes.html#lua-de-mel",
+    "href": "lista-de-presentes.html#lua-de-mel",
+    "title": "Lista de Presentes",
+    "section": "Lua de Mel",
+    "text": "Lua de Mel"
   }
 ]
