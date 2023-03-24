@@ -12,3 +12,6 @@ website:
         
         
 lang: pt        
+
+project:
+  output-dir: ./pt/

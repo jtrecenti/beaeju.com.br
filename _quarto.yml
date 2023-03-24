@@ -9,8 +9,8 @@ format:
       
     
 profile:
-  default: pt
-  group: [pt, en]
+  default: portugues
+  group: [portugues, english]
 
 
 
