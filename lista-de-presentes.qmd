@@ -42,6 +42,7 @@ planilha_presentes <- googlesheets4::read_sheet(url_sheets) |>
 gerar_tabela_presentes <- function(tabela) {
   tabela |>
     dplyr::select(-categoria,-opcao_1, -n_cotas, -preco_cota) |>
+    dplyr::arrange(estimativa_preco) |> 
     dplyr::relocate(foto, .before = tidyselect::everything()) |>
     reactable::reactable(
       sortable = TRUE,
@@ -83,16 +84,22 @@ gerar_tabela_presentes <- function(tabela) {
 
 
 
-
-```{r include=FALSE}
 ## Utensílios domésticos
-# planilha_presentes |> 
-#   dplyr::filter(categoria == "utensilios_domesticos") |> 
-#   gerar_tabela_presentes()
+
+
+```{r}
+planilha_presentes |>
+  dplyr::filter(categoria == "utensilios_domesticos") |>
+  gerar_tabela_presentes()
+```
+
+
 ## Cama, mesa e banho
-# planilha_presentes |> 
-#   dplyr::filter(categoria == "cama_mesa_banho") |> 
-#   gerar_tabela_presentes()
+
+```{r}
+planilha_presentes |>
+  dplyr::filter(categoria == "cama_mesa_banho") |>
+  gerar_tabela_presentes()
 ```
 
 ## Mimos para a Noiva
@@ -145,12 +152,13 @@ planilha_presentes |>
   gerar_tabela_presentes()
 ```
 
-## chatgpt
-
-É, não foi fácil pensar na lista de presentes. Então pedimos para o chatGPT ajudar! As imagens foram geradas pelo DALL-E.
 
 ```{r}
-planilha_presentes |> 
-  dplyr::filter(categoria == "chatgpt") |> 
-  gerar_tabela_presentes()
+## chatgpt
+
+# É, não foi fácil pensar na lista de presentes. Então pedimos para o chatGPT ajudar! As imagens foram geradas pelo DALL-E.
+# 
+# planilha_presentes |> 
+#   dplyr::filter(categoria == "chatgpt") |> 
+#   gerar_tabela_presentes()
 ```
