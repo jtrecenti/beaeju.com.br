@@ -12,7 +12,7 @@ toc: false
 
 Fala se esse casal não é muito fofo? Clique para abrir o álbum! Se quiser, você também pode ver no <a href="https://photos.app.goo.gl/hb3acxd5F6paPSYS9" target="_blank">Google Photos por aqui</a>.
 
-::: {layout-ncol=6}
+::: {layout-ncol=3}
 
 ```{r}
 #| label: galeria-de-fotos-demora
@@ -36,7 +36,9 @@ links <- httr::content(r, "text") |>
 
 purrr::walk(links, purrr::possibly(baixar))
 
-stringr::str_glue('![]({fs::dir_ls("images/galeria")}){{group="fotos"}}\n\n')
+imagens <- fs::dir_ls("images/galeria")
+
+stringr::str_glue('![]({imagens}){{group="fotos"}}\n\n')
 ```
 
 :::

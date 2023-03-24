@@ -6,7 +6,7 @@ website:
       - href: galeria.qmd
       - href: mural-mensagens.qmd
       - href: lista-de-presentes.qmd
-      - href: confirmar-presenca.qmd
+#      - href: confirmar-presenca.qmd
       
         
         
