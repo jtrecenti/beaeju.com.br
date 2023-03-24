@@ -5,7 +5,7 @@ website:
       - href: cerimonia.qmd    
       - href: galeria.qmd
       - href: mural-mensagens.qmd
-      - href: lista-de-presentes.qmd
+      - href: presentes.qmd
 #      - href: confirmar-presenca.qmd
       
         
