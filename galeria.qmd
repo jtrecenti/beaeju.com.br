@@ -1,5 +1,6 @@
 ---
-title: "Galeria de Fotos"
+# title: "Galeria de Fotos"
+profile: portugues
 filters:
   - lightbox
 lightbox: auto
@@ -10,9 +11,25 @@ knitr:
 toc: false
 ---
 
-Fala se esse casal não é muito fofo? Clique para abrir o álbum! 
+::: {.content-visible when-profile="portugues"}
+
+# Galeria de fotos
+
+Fala se esse casal não é muito fofo? Clique na foto para ampliar! 
 
 Se quiser, você também pode ver no <a href="https://photos.app.goo.gl/hb3acxd5F6paPSYS9" target="_blank">Google Photos por aqui</a>.
+:::
+
+
+::: {.content-visible when-profile="english"}
+
+# Photos
+
+Isn't this couple cute? Click on the photo to zoom it!
+
+If you want, you can also see the photos on <a href="https://photos.app.goo.gl/hb3acxd5F6paPSYS9" target="_blank">Google Photos</a>.
+:::
+
 
 ```{r}
 #| label: galeria-de-fotos-demora
