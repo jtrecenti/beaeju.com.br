@@ -3,7 +3,7 @@ lang: en
 project:
   title: "Beatriz & Julio"
   type: website
-  output-dir: en
+  output-dir: docs/en
 
 format:
   html:

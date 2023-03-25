@@ -1,5 +1,5 @@
 ---
-title: "Lista de Presentes"
+# title: "Lista de Presentes"
 filters:
   - lightbox
 lightbox: auto
@@ -11,16 +11,34 @@ knitr:
 toc: false
 ---
 
-Esta lista de presentes é feita de produtos fictícios. Cada item representa um valor que será convertido em dinheiro.
+::: {.content-visible when-profile="portugues"}
+# Lista de Presentes
+
+Esta lista de presentes é feita de produtos desejados Cada item representa um valor que será convertido em dinheiro.
 
 Lembre-se que o presente é completamente opcional! O que mais queremos é a presença de pessoas queridas e que torcem pela nossa felicidade!
+:::
+
+
+::: {.content-visible when-profile="english"}
+# Wedding gifts
+
+This gift list is made up of itens that we need or desire. Each item represents a value that will be converted into cash.
+
+Remember that the gift is completely optional! What we most want is the presence of people that are dear to us, and who root for our happiness!
+:::
+
+
+
 
 ```{r include=FALSE}
 url_sheets <- "https://docs.google.com/spreadsheets/d/1_VsPKJZ6wz2HvabvGI6V-oW-1923KE_FyfKsvy-T2yc/edit#gid=0"
 
 googlesheets4::gs4_auth(email = Sys.getenv("GSHEETS_EMAIL"))
 
-planilha_presentes <- googlesheets4::read_sheet(url_sheets) |> 
+planilha_presentes_raw <- googlesheets4::read_sheet(url_sheets) 
+
+planilha_presentes <- planilha_presentes_raw |> 
   dplyr::arrange(estimativa_preco) |> 
   dplyr::mutate(
     foto = dplyr::if_else(is.na(foto), "presente.jpg", foto),
@@ -28,34 +46,48 @@ planilha_presentes <- googlesheets4::read_sheet(url_sheets) |>
       !stringr::str_starts(foto, "http"),
       paste0("images/lista-de-presenca/", foto), foto
     ),
-    estimativa_preco = scales::dollar(estimativa_preco,
+    estimativa_preco_format = scales::dollar(estimativa_preco,
                                       prefix = "R$ ", 
                                       accuracy = 0.01,
                                       decimal.mark = ",", 
-                                      big.mark = ".")
+                                      big.mark = "."),
+    estimativa_preco_us = round(estimativa_preco / 5.25),
+    estimativa_preco_us_format = scales::dollar(estimativa_preco_us)
     # status = dplyr::case_when(
     #   !status & !is.na(pix_img) ~ as.character(glue::glue("<div class='quarto-figure quarto-figure-center'><figure class='figure'><p><a href='{pix_img}' class='lightbox' data-gallery='pix'><img src='{pix_img}' class='img-fluid figure-img'/></a></p></figure></div>")),
     #   is.na(pix_img) ~ "",
     #   TRUE ~ "Já fomos presenteados! Agradecemos muito."
     # )
   ) |> 
-  dplyr::select(-pix_code, -pix_img)
+   dplyr::arrange(estimativa_preco)
 
 
-gerar_tabela_presentes <- function(tabela) {
-  dados <- tabela |>
-    dplyr::select(-categoria,-opcao_1, -n_cotas, -preco_cota) |>
-    dplyr::arrange(estimativa_preco) |> 
-    dplyr::relocate(foto, .before = tidyselect::everything()) 
-  
+gerar_tabela_presentes <- function(dados) {
+ ambiente <- Sys.getenv("QUARTO_PROFILE")
+  if(ambiente == "portugues"){
+    stringr::str_glue('![{dados$item} <br> **{dados$estimativa_preco_format}**]({dados$foto}){{group="fotos" description="Caso você queira nos presentear com este item, envie um pix com o valor para ...." }}\n\n')
+  } else if(ambiente == "english") {
+        stringr::str_glue('![{dados$item} <br> **{dados$estimativa_preco_us_format}**]({dados$foto}){{group="fotos" description="Caso você queira nos presentear com este item, envie um pix com o valor para ...." }}\n\n')
+    
+  }
 
-stringr::str_glue('![{dados$item} <br> **{dados$estimativa_preco}**]({dados$foto}){{group="fotos" description="Caso você queira nos presentear com este item, envie um pix com o valor para ...." }}\n\n')
   
 }
 
 ```
 
+
+
+::: {.content-visible when-profile="portugues"}
+
 ## Utensílios domésticos
+:::
+
+::: {.content-visible when-profile="english"}
+
+##  Household Utensils
+:::
+
 
 ::: {layout-ncol="2"}
 ```{r}
@@ -65,7 +97,17 @@ planilha_presentes |>
 ```
 :::
 
+
+
+::: {.content-visible when-profile="portugues"}
+
 ## Cama, mesa e banho
+:::
+
+::: {.content-visible when-profile="english"}
+
+##  Bed & Bath
+:::
 
 ::: {layout-ncol="2"}
 ```{r}
@@ -76,7 +118,17 @@ planilha_presentes |>
 :::
 
 
+
+::: {.content-visible when-profile="portugues"}
+
 ## Mimos para a Noiva
+:::
+
+::: {.content-visible when-profile="english"}
+
+##  Gifts for the Bride
+:::
+
 
 ::: {layout-ncol="2"}
 ```{r}
@@ -86,7 +138,17 @@ planilha_presentes |>
 ```
 :::
 
+
+::: {.content-visible when-profile="portugues"}
+
 ## Mimos para o Noivo
+:::
+
+::: {.content-visible when-profile="english"}
+
+##  Gifts for the Groom
+:::
+
 
 ::: {layout-ncol="2"}
 ```{r}
@@ -97,7 +159,15 @@ planilha_presentes |>
 :::
 
 
+::: {.content-visible when-profile="portugues"}
+
 ## Lua de Mel
+:::
+
+::: {.content-visible when-profile="english"}
+
+##  Honeymoon
+:::
 
 ::: {layout-ncol="2"}
 ```{r}
@@ -109,7 +179,15 @@ planilha_presentes |>
 :::
 
 
+::: {.content-visible when-profile="portugues"}
+
 ## Eletroportáteis
+:::
+
+::: {.content-visible when-profile="english"}
+
+##  Household Appliances 
+:::
 
 ::: {layout-ncol="2"}
 ```{r}
@@ -119,8 +197,15 @@ planilha_presentes |>
 ```
 :::
 
+::: {.content-visible when-profile="portugues"}
 
 ## Móveis
+:::
+
+::: {.content-visible when-profile="english"}
+
+##  Furniture
+:::
 
 
 ::: {layout-ncol="2"}
@@ -131,7 +216,17 @@ planilha_presentes |>
 ```
 :::
 
+
+::: {.content-visible when-profile="portugues"}
+
 ## Eletrodomésticos
+:::
+
+::: {.content-visible when-profile="english"}
+
+##  Electric Appliances
+:::
+
 
 ::: {layout-ncol="2"}
 ```{r}
