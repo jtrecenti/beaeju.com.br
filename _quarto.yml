@@ -1,17 +1,25 @@
 project:
   type: website
+  post-render: _post-render.R
 
-format:
-  html:
-    theme: cosmo
-    css: styles.scss
-    toc: true
-      
-    
+website:
+  navbar:
+    left:
+      - href: cerimonia.qmd
+      - href: confirmar-presenca.qmd
+      - href: galeria.qmd
+      - href: mural-mensagens.qmd
+      - href: presentes.qmd
+    right: 
+      - href: https://beaeju.com.br/index.html
+        text: Português
+      - href: https://beaeju.com.br/en/index.html
+        text: English
+        
 profile:
   default: portugues
   group: 
-    - [portugues, english]
+    - [portugues,english]
 
 
 

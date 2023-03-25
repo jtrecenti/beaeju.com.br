@@ -14,35 +14,138 @@ Fala se esse casal não é muito fofo? Clique para abrir o álbum!
 
 Se quiser, você também pode ver no <a href="https://photos.app.goo.gl/hb3acxd5F6paPSYS9" target="_blank">Google Photos por aqui</a>.
 
-::: {layout-ncol=3}
-
 ```{r}
 #| label: galeria-de-fotos-demora
-#| results: asis
+#| eval: false
+#| echo: false
 r <- httr::GET("https://photos.app.goo.gl/hb3acxd5F6paPSYS9")
 baixar <- function(x) {
-  f <- paste0("images/galeria/", basename(x), ".jpg")
-  if (!file.exists(f)) {
-    wd <- httr::write_disk(f, TRUE)
-    r <- httr::GET(x, wd)
-    linhas <- nrow(httr::content(r))
-    if (linhas < 200) fs::file_delete(f)
+  r <- httr::GET(x)
+  img <- httr::content(r)
+  raw <- httr::content(r, "raw")
+  pixels <- prod(dim(img)[c(1,2)])
+  if (pixels > 1e5) {
+    tibble::tibble(base64 = base64enc::base64encode(raw))
+  } else {
+    tibble::tibble()
   }
-  f
 }
-links <- httr::content(r, "text") |> 
+links <- httr::content(r, "text", encoding = "UTF-8") |> 
   stringr::str_extract_all("https://lh3\\.googleusercontent\\.com/[^\"]+") |> 
   dplyr::first() |> 
   stringr::str_replace("=w[0-9]+-h[0-9]+", "=w640-h480") |> 
   unique()
 
-purrr::walk(links, purrr::possibly(baixar))
+dados_imagens <- purrr::map(links, purrr::possibly(baixar), .progress = TRUE) |> 
+  purrr::list_rbind(names_to = "id")
 
-imagens <- fs::dir_ls("images/galeria")
+readr::write_rds(dados_imagens, "images/dados_imagens.rds", compress = "xz")
 
-stringr::str_glue('![]({imagens}){{group="fotos"}}\n\n')
+piggyback::pb_new_release(tag = "galeria")
+piggyback::pb_upload("images/galeria/00001.jpg", tag = "galeria")
+piggyback::pb_list(tag = "galeria") |> 
+  dplyr::glimpse()
+
+dados_imagens <- readr::read_rds("images/dados_imagens.rds")
+stringr::str_glue("![](data:image/jpeg;base64,{head(dados_imagens$base64)})\n\n")
 ```
 
-:::
-
-
+![00001](https://user-images.githubusercontent.com/1425970/227742653-65cbb2e0-bb35-46cb-a0a4-56f3aba9ca3b.jpg){group="galeria"}
+![00004](https://user-images.githubusercontent.com/1425970/227742655-1047b195-ed41-4188-8ce0-71cf2c38b021.jpg){group="galeria"}
+![00005](https://user-images.githubusercontent.com/1425970/227742658-47fc7133-6fb4-43c8-bc3b-2b85c2b76776.jpg){group="galeria"}
+![00006](https://user-images.githubusercontent.com/1425970/227742659-02135a3f-7334-4557-8a6a-a661046fe376.jpg){group="galeria"}
+![00007](https://user-images.githubusercontent.com/1425970/227742660-2195259e-c778-46d3-b093-92f3bd6a1c74.jpg){group="galeria"}
+![00008](https://user-images.githubusercontent.com/1425970/227742662-12605b6e-2294-4526-adab-4ba00c562bd5.jpg){group="galeria"}
+![00009](https://user-images.githubusercontent.com/1425970/227742663-32d62cf3-a683-4a99-a2c2-3c05e9218d3a.jpg){group="galeria"}
+![00010](https://user-images.githubusercontent.com/1425970/227742664-d2c0993f-fbfa-48ea-a5a5-6ac388c92ae4.jpg){group="galeria"}
+![00011](https://user-images.githubusercontent.com/1425970/227742665-93022ffb-c7f0-488a-b3de-9cdf1e1de2c2.jpg){group="galeria"}
+![00012](https://user-images.githubusercontent.com/1425970/227742666-b8c9e653-38aa-4b2c-b06b-4b56112bc0f8.jpg){group="galeria"}
+![00013](https://user-images.githubusercontent.com/1425970/227742667-81bd31e2-5181-492d-85e4-394460c04969.jpg){group="galeria"}
+![00014](https://user-images.githubusercontent.com/1425970/227742668-2b964b66-3cf0-49d6-bbe7-a11a989a86a9.jpg){group="galeria"}
+![00015](https://user-images.githubusercontent.com/1425970/227742669-5d709fb1-c5ea-414c-b2e8-2fecb579add1.jpg){group="galeria"}
+![00016](https://user-images.githubusercontent.com/1425970/227742670-9dbfa0ee-ba42-4626-b038-a793e15ebc4f.jpg){group="galeria"}
+![00017](https://user-images.githubusercontent.com/1425970/227742671-39b96dfb-73c8-4c89-88f0-83f6e986e6a4.jpg){group="galeria"}
+![00018](https://user-images.githubusercontent.com/1425970/227742672-27a8ec19-ac74-485b-b945-fc8ae39353be.jpg){group="galeria"}
+![00019](https://user-images.githubusercontent.com/1425970/227742674-ee8931b3-39bc-4401-bce3-31195d1e1087.jpg){group="galeria"}
+![00020](https://user-images.githubusercontent.com/1425970/227742675-c53feb85-f69a-4893-9302-0bbea8c831c8.jpg){group="galeria"}
+![00021](https://user-images.githubusercontent.com/1425970/227742676-7e7c99a7-894f-4fd1-9a69-4b333866803c.jpg){group="galeria"}
+![00022](https://user-images.githubusercontent.com/1425970/227742679-6537020a-06e7-426b-990b-0d2502b617be.jpg){group="galeria"}
+![00023](https://user-images.githubusercontent.com/1425970/227742680-5ad5ff47-a316-443d-83a0-a2089781638f.jpg){group="galeria"}
+![00024](https://user-images.githubusercontent.com/1425970/227742681-7b2910db-32c9-4c96-805e-2b07221019d9.jpg){group="galeria"}
+![00025](https://user-images.githubusercontent.com/1425970/227742683-fd43abf1-8fb8-410f-8a0a-e8a9db10d6b6.jpg){group="galeria"}
+![00026](https://user-images.githubusercontent.com/1425970/227742685-d69c026f-445a-4ce9-a990-8d1741efbc8c.jpg){group="galeria"}
+![00027](https://user-images.githubusercontent.com/1425970/227742686-e9246a93-8a36-43e5-9a3d-41c7d9d53316.jpg){group="galeria"}
+![00028](https://user-images.githubusercontent.com/1425970/227742688-fd089d9e-d48c-436f-b826-642f3af0c77f.jpg){group="galeria"}
+![00029](https://user-images.githubusercontent.com/1425970/227742690-dbd747c0-48b7-4e3f-8a82-a8720867915d.jpg){group="galeria"}
+![00030](https://user-images.githubusercontent.com/1425970/227742692-f116253a-ff4c-43e6-bdf1-6f495616111f.jpg){group="galeria"}
+![00031](https://user-images.githubusercontent.com/1425970/227742694-e06c6363-3216-4d7e-a175-aba8e89061e9.jpg){group="galeria"}
+![00032](https://user-images.githubusercontent.com/1425970/227742695-55e3180c-5899-4c51-bb29-7ad485865c1d.jpg){group="galeria"}
+![00033](https://user-images.githubusercontent.com/1425970/227742696-505d6b5b-d101-4046-a3d9-91c23cbc410f.jpg){group="galeria"}
+![00034](https://user-images.githubusercontent.com/1425970/227742697-64906c8a-7670-45e8-b8aa-9b4b79c4ec7e.jpg){group="galeria"}
+![00035](https://user-images.githubusercontent.com/1425970/227742698-2cf61d6e-7078-4314-abc7-6facaedb3394.jpg){group="galeria"}
+![00036](https://user-images.githubusercontent.com/1425970/227742699-16883958-f778-45c5-8c13-063bfc223fd7.jpg){group="galeria"}
+![00037](https://user-images.githubusercontent.com/1425970/227742700-248ab31f-d0af-4107-a1f5-e3325456cd31.jpg){group="galeria"}
+![00038](https://user-images.githubusercontent.com/1425970/227742701-b58940f4-1f59-4c37-8993-92d94f2472ac.jpg){group="galeria"}
+![00039](https://user-images.githubusercontent.com/1425970/227742702-151dd060-a137-4a62-9642-96f93b2ce498.jpg){group="galeria"}
+![00040](https://user-images.githubusercontent.com/1425970/227742703-4c664c61-1105-447a-a9ad-d81953b6e550.jpg){group="galeria"}
+![00041](https://user-images.githubusercontent.com/1425970/227742705-80930814-8d50-44ed-916f-c5bc81ede167.jpg){group="galeria"}
+![00042](https://user-images.githubusercontent.com/1425970/227742707-a1493a8a-28b3-47ae-87e5-1f6dcb63ed96.jpg){group="galeria"}
+![00043](https://user-images.githubusercontent.com/1425970/227742708-19bd3a91-dd43-4b51-a478-1bb21eb1cb3a.jpg){group="galeria"}
+![00044](https://user-images.githubusercontent.com/1425970/227742710-1d4726e5-1317-430c-b654-3bbe6fc2500b.jpg){group="galeria"}
+![00045](https://user-images.githubusercontent.com/1425970/227742711-7b05fc8a-ff05-42b4-a10f-26c61f6e9cb1.jpg){group="galeria"}
+![00046](https://user-images.githubusercontent.com/1425970/227742712-7ffc5d8c-5a72-4f97-99ed-447d83f7a83d.jpg){group="galeria"}
+![00047](https://user-images.githubusercontent.com/1425970/227742714-6e68a035-6333-4b8b-a022-1e8a2f2cd56d.jpg){group="galeria"}
+![00048](https://user-images.githubusercontent.com/1425970/227742717-40d8a643-3d02-42a4-9861-2358ba42c660.jpg){group="galeria"}
+![00049](https://user-images.githubusercontent.com/1425970/227742720-f9f322ae-b913-4d12-8838-b6b30bb21907.jpg){group="galeria"}
+![00050](https://user-images.githubusercontent.com/1425970/227742722-8d8b37ef-0567-4773-96df-fd23d8ec8ec9.jpg){group="galeria"}
+![00051](https://user-images.githubusercontent.com/1425970/227742724-a9f412c1-ab6d-4ca7-a0a7-4dbcd48505f3.jpg){group="galeria"}
+![00052](https://user-images.githubusercontent.com/1425970/227742727-b911afc3-8f73-4054-abcb-e3b85bfb12b8.jpg){group="galeria"}
+![00053](https://user-images.githubusercontent.com/1425970/227742728-1282fac3-19f1-411e-997f-bab38368c408.jpg){group="galeria"}
+![00054](https://user-images.githubusercontent.com/1425970/227742730-62758d6c-878b-4ef3-877e-4bee69bac02f.jpg){group="galeria"}
+![00055](https://user-images.githubusercontent.com/1425970/227742732-b17d6d5c-369d-4560-aa7f-ef9ab2a63089.jpg){group="galeria"}
+![00056](https://user-images.githubusercontent.com/1425970/227742733-f9d9e43f-6988-49aa-8458-e3b7b82b2fd6.jpg){group="galeria"}
+![00057](https://user-images.githubusercontent.com/1425970/227742734-544dd087-7286-43fd-8ef9-aaa176588ea8.jpg){group="galeria"}
+![00058](https://user-images.githubusercontent.com/1425970/227742735-8b6b1a9c-5448-4c56-9678-e5977a6e8b1c.jpg){group="galeria"}
+![00059](https://user-images.githubusercontent.com/1425970/227742737-9875db6a-c065-4ffa-93d1-ff95f8197ae5.jpg){group="galeria"}
+![00060](https://user-images.githubusercontent.com/1425970/227742738-a3daadf0-d147-49e1-b7b2-295a21347347.jpg){group="galeria"}
+![00061](https://user-images.githubusercontent.com/1425970/227742739-04f5de3f-528d-41d6-bda0-967ce06bedc3.jpg){group="galeria"}
+![00062](https://user-images.githubusercontent.com/1425970/227742740-3d36a0df-0d9e-43a6-8d36-af176bddbdd0.jpg){group="galeria"}
+![00063](https://user-images.githubusercontent.com/1425970/227742741-dccc7b38-d3ef-4118-812f-cb42786d337d.jpg){group="galeria"}
+![00064](https://user-images.githubusercontent.com/1425970/227742742-ca383da9-d3e9-44bb-ad44-e0ba10b6455d.jpg){group="galeria"}
+![00065](https://user-images.githubusercontent.com/1425970/227742744-bf323975-2432-45b5-a4cf-57d8fce67ca9.jpg){group="galeria"}
+![00066](https://user-images.githubusercontent.com/1425970/227742746-54324ebb-1a3f-4423-9324-ab2a06e48bb0.jpg){group="galeria"}
+![00067](https://user-images.githubusercontent.com/1425970/227742747-bd9f83f2-c093-4055-a9ab-fa8a9fa94547.jpg){group="galeria"}
+![00068](https://user-images.githubusercontent.com/1425970/227742748-b09e8cf3-9dd4-46be-9dec-50678d3e0625.jpg){group="galeria"}
+![00069](https://user-images.githubusercontent.com/1425970/227742749-d4bf31c3-f76f-4982-8c4c-2046e1686ba1.jpg){group="galeria"}
+![00070](https://user-images.githubusercontent.com/1425970/227742750-bfa7ca34-e2ef-4455-981e-d0992547f071.jpg){group="galeria"}
+![00071](https://user-images.githubusercontent.com/1425970/227742751-55d59b71-9cb7-4634-9423-1d4ee7df15a1.jpg){group="galeria"}
+![00072](https://user-images.githubusercontent.com/1425970/227742752-8a9bc7a1-921a-4dec-8658-29dcb5ef5514.jpg){group="galeria"}
+![00073](https://user-images.githubusercontent.com/1425970/227742753-d274e3ee-0232-4941-864a-b012f805caed.jpg){group="galeria"}
+![00074](https://user-images.githubusercontent.com/1425970/227742754-d8ff30b9-1f97-4b90-b44f-9a6c91c5ceb4.jpg){group="galeria"}
+![00075](https://user-images.githubusercontent.com/1425970/227742755-192c9829-789b-4538-b0e1-579a1ca67f3e.jpg){group="galeria"}
+![00076](https://user-images.githubusercontent.com/1425970/227742756-9133cb1f-136e-4046-a898-1ace87d06d8d.jpg){group="galeria"}
+![00077](https://user-images.githubusercontent.com/1425970/227742757-7677c7ad-3af6-42ae-bbd8-76819ab9ed09.jpg){group="galeria"}
+![00078](https://user-images.githubusercontent.com/1425970/227742758-bb4e956f-f6b7-42aa-a4de-a5f10982cd65.jpg){group="galeria"}
+![00079](https://user-images.githubusercontent.com/1425970/227742759-f641c165-5919-4b7b-b595-9fc197243bca.jpg){group="galeria"}
+![00080](https://user-images.githubusercontent.com/1425970/227742760-35350afd-b8d0-4549-a18d-7ed25ad313c7.jpg){group="galeria"}
+![00081](https://user-images.githubusercontent.com/1425970/227742762-235b376f-897b-40c6-bd53-94cbb5e628ec.jpg){group="galeria"}
+![00082](https://user-images.githubusercontent.com/1425970/227742765-3a6f64ef-d2a4-4876-830f-0d769291eef3.jpg){group="galeria"}
+![00083](https://user-images.githubusercontent.com/1425970/227742766-5eb7c92e-4039-454e-94ec-e952f220ce55.jpg){group="galeria"}
+![00084](https://user-images.githubusercontent.com/1425970/227742768-7132e8e4-190a-41b9-ab1b-610967c6c887.jpg){group="galeria"}
+![00085](https://user-images.githubusercontent.com/1425970/227742769-69e8165e-b39f-448f-b836-fbd144086045.jpg){group="galeria"}
+![00086](https://user-images.githubusercontent.com/1425970/227742771-9a36a892-0e4a-47d1-96c7-7b22bcf465c3.jpg){group="galeria"}
+![00087](https://user-images.githubusercontent.com/1425970/227742772-52eea4cf-9a8a-4f2c-aab3-d54b0cbb7ef7.jpg){group="galeria"}
+![00088](https://user-images.githubusercontent.com/1425970/227742773-d6d3b737-c98a-446e-89c6-7e52b5b80e0b.jpg){group="galeria"}
+![00089](https://user-images.githubusercontent.com/1425970/227742774-d7c5abf9-2ba5-4baf-a9e5-a36e06bdad00.jpg){group="galeria"}
+![00090](https://user-images.githubusercontent.com/1425970/227742776-f1d3f480-a7ab-482c-bd00-1bcf94b4f977.jpg){group="galeria"}
+![00091](https://user-images.githubusercontent.com/1425970/227742777-44cd0c5a-ebde-4dde-b507-984819516648.jpg){group="galeria"}
+![00092](https://user-images.githubusercontent.com/1425970/227742778-e4557795-e170-4d7a-a1d7-b28baf43caf4.jpg){group="galeria"}
+![00093](https://user-images.githubusercontent.com/1425970/227742780-ea863f88-849c-4867-8513-310b9c7a262b.jpg){group="galeria"}
+![00094](https://user-images.githubusercontent.com/1425970/227742781-22193c2f-ee6d-431a-8e92-520d82c9f3e9.jpg){group="galeria"}
+![00095](https://user-images.githubusercontent.com/1425970/227742782-d9115376-293b-4caf-bcfa-0969980bdcf1.jpg){group="galeria"}
+![00096](https://user-images.githubusercontent.com/1425970/227742783-989c6f02-13fc-45b5-8cfe-175caa23ed10.jpg){group="galeria"}
+![00097](https://user-images.githubusercontent.com/1425970/227742784-617f8c19-d960-47f5-8af2-09d22f1ba903.jpg){group="galeria"}
+![00098](https://user-images.githubusercontent.com/1425970/227742785-157a26f4-a979-480a-bcb4-4d26720d6fa8.jpg){group="galeria"}
+![00099](https://user-images.githubusercontent.com/1425970/227742786-0f4b659f-81d1-4208-bb04-501cbc4fa6c6.jpg){group="galeria"}
+![00100](https://user-images.githubusercontent.com/1425970/227742787-e238cbd1-7937-42d2-bb8a-49881b33b026.jpg){group="galeria"}
+![00101](https://user-images.githubusercontent.com/1425970/227742788-1bd1369e-b30e-40d3-bc78-2b760cbfced6.jpg){group="galeria"}

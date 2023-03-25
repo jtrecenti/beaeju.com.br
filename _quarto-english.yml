@@ -1,0 +1,12 @@
+lang: en
+
+project:
+  title: "Beatriz & Julio"
+  type: website
+  output-dir: en
+
+format:
+  html:
+    theme: cosmo
+    css: styles.scss
+    toc: true
