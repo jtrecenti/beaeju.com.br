@@ -10,7 +10,8 @@ format:
     
 profile:
   default: portugues
-  group: [portugues, english]
+  group: 
+    - [portugues, english]
 
 
 
