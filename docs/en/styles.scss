@@ -68,3 +68,36 @@ h2, .h2 {
 .quarto-figure > figure {
   padding: 0.5em;
 }
+
+
+.navbar #quarto-search.type-overlay .aa-Autocomplete svg.aa-SubmitIcon {
+  color: antiquewhite;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+  color: antiquewhite;
+}
+
+.navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
+   color: antiquewhite;
+}
+
+.navbar-title, .nav-item, .nav-link{
+  color: antiquewhite;
+}
+
+.nav-link.active{
+  color: #fff;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: antiquewhite;
+}
+
+
+
+.navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active {
+  color: #fff;
+  text-decoration-line: revert;
+  text-decoration-style: dotted;
+}
