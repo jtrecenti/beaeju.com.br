@@ -4,9 +4,22 @@ project:
   title: "Beatriz e Julio"
   type: website
   output-dir: docs
-  
-format:
-  html:
-    theme: cosmo
-    css: styles.scss
-    toc: true
+    
+website:
+  navbar:
+    left:
+      - text: "Cerimônia"
+        href: cerimonia.qmd
+      # - text: "Confirmar presença"
+      #   href: confirmar-presenca.qmd
+      - text: "Galeria de fotos"
+        href: galeria.qmd
+      - text: "Mural de mensagens"
+        href: mural-mensagens.qmd
+      - text: "Lista de presentes"
+        href: presentes.qmd
+    right: 
+      - href: https://beaeju.com.br/index.html
+        text: Português
+      - href: https://beaeju.com.br/en/index.html
+        text: English

@@ -5,8 +5,21 @@ project:
   type: website
   output-dir: docs/en
 
-format:
-  html:
-    theme: cosmo
-    css: styles.scss
-    toc: true
+website:
+  navbar:
+    left:
+      - text: "Ceremony and Wedding party"
+        href: cerimonia.qmd
+      # - text: "Confirmar presença"
+      #   href: confirmar-presenca.qmd
+      - text: "Photos"
+        href: galeria.qmd
+      - text: "Message board"
+        href: mural-mensagens.qmd
+      - text: "Wedding gifts"
+        href: presentes.qmd
+    right: 
+      - href: https://beaeju.com.br/index.html
+        text: Português
+      - href: https://beaeju.com.br/en/index.html
+        text: English
