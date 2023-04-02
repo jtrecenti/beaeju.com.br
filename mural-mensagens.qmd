@@ -2,7 +2,7 @@
 title: "Mural de Mensagens"
 filters:
   - lightbox
-lightbox: auto
+lightbox: off
 knitr:
   opts_chunk: 
     echo: false
@@ -35,7 +35,8 @@ function createMessageElement(messageData) {
     const messageElement = document.createElement('div');
     messageElement.classList.add('message');
 
-    const usernameElement = document.createElement('strong');
+    const usernameElement = document.createElement('span');
+    usernameElement.classList.add('username');
     usernameElement.textContent = messageData.username;
     messageElement.appendChild(usernameElement);
 
@@ -61,3 +62,25 @@ initMessageBoard();
 
 
 </script>
+
+<style>
+    #message-board {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .message {
+        border: 1px solid #ccc;
+        padding: 10px;
+        background-color: #f8f8f8;
+    }
+
+    .username {
+        font-weight: normal;
+        display: block;
+        margin-bottom: 5px;
+        font-size: 1em;
+        color: #b34838;
+    }
+</style>
