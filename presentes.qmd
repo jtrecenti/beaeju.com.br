@@ -38,7 +38,8 @@ Remember that **the gift is completely optional**! What we most want is the pres
 ```{r include=FALSE}
 url_sheets <- "https://docs.google.com/spreadsheets/d/1_VsPKJZ6wz2HvabvGI6V-oW-1923KE_FyfKsvy-T2yc/edit#gid=0"
 
-googlesheets4::gs4_auth(email = Sys.getenv("GSHEETS_EMAIL"))
+googlesheets4::gs4_deauth()
+
 
 planilha_presentes_raw <- googlesheets4::read_sheet(url_sheets) 
 
