@@ -12,7 +12,7 @@ toc: false
 
 
 ::: {.content-visible when-profile="portugues"}
-## Save the Date
+## Reserve a data!
 
 **Data:** 14/10/2023 às 10h00
 
@@ -22,7 +22,7 @@ Em breve mais informações sobre o casamento da Bea e do Ju!
 ::: {.content-visible when-profile="english"}
 ## Save the Date
 
-**Date:** October 14th 2023, 10h.
+**Date:** October 14th 2023, 10h AM.
 
 More information soon!
 :::

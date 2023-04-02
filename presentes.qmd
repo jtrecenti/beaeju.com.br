@@ -8,7 +8,7 @@ knitr:
     echo: false
     message: false
     results: asis
-toc: false
+toc: true
 ---
 
 ::: {.content-visible when-profile="portugues"}
@@ -70,7 +70,7 @@ planilha_presentes <- planilha_presentes_raw |>
 gerar_tabela_presentes <- function(dados) {
  ambiente <- Sys.getenv("QUARTO_PROFILE")
   if(ambiente == "portugues"){
-    stringr::str_glue('![{dados$item} <br> **{dados$estimativa_preco_format}**]({dados$foto}){{group="fotos" description="Caso você queira nos presentear com este item, envie um pix com o valor para<br/>{dados$status}<br/>Se quiser usar o código, copie o texto abaixo <br/><input type=\'text\' value=\'{dados$pix_code}\' id=\'{dados$id}\' class=\'copiar-pix\' onClick=\'this.select();\'></input>" }}\n\n')
+    stringr::str_glue('![{dados$item} <br> **{dados$estimativa_preco_format}**]({dados$foto}){{group="fotos" description="Caso você queira nos presentear com este item, envie um pix com o valor para<br/>{dados$status}<br/>Se quiser usar o código PIX, copie o texto abaixo <br/><input type=\'text\' value=\'{dados$pix_code}\' id=\'{dados$id}\' class=\'copiar-pix\' onClick=\'this.select();\'></input>" }}\n\n')
   } else if(ambiente == "english") {
         stringr::str_glue('![{dados$item_en} <br> **{dados$estimativa_preco_us_format}**]({dados$foto}){{group="fotos" description="If you want to gift us this item, you can transfer **{dados$estimativa_preco_us_format}** with [Paypal](https://www.paypal.com/) to: **beatriz.milz@hotmail.com**" }}\n\n')
     
@@ -241,14 +241,16 @@ planilha_presentes |>
 ```
 :::
 
+::: {.content-visible when-profile="portugues"}
+## Dinheiro
 
-```{r}
-## chatgpt
+Caso queira enviar algum valor diferente dos valores dos itens acima, ou deixar para que os noivos escolham o presente, você pode utilizar o código PIX abaixo e enviar o valor que quiser!
 
-# É, não foi fácil pensar na lista de presentes. Então pedimos para o chatGPT ajudar! As imagens foram geradas pelo DALL-E.
-# 
-# planilha_presentes |> 
-#   dplyr::filter(categoria == "chatgpt") |> 
-#   gerar_tabela_presentes()
-```
+<center>
+![Pix](https://i.imgur.com/JGPmV6k.png){group="fotos" description="Caso você queira nos presentear com este item, envie um pix desejado usando esse QR CODE, ou copie o número do código PIX abaixo: <br> <input type='text' value='00020126850014br.gov.bcb.pix0136cf692a90-fb2e-48f5-913d-f73f7ed66cc90223Casamento beaeju.com.br5204000053039865802BR5925JULIO ADOLFO ZUCON TRECEN6009SAO PAULO62180514CasamentoGeral63042424' id='pix-geral' class='copiar-pix' onClick='this.select();'></input>"}
 
+<input type='text' value='00020126850014br.gov.bcb.pix0136cf692a90-fb2e-48f5-913d-f73f7ed66cc90223Casamento beaeju.com.br5204000053039865802BR5925JULIO ADOLFO ZUCON TRECEN6009SAO PAULO62180514CasamentoGeral63042424' id='pix-geral' class='copiar-pix' onClick='this.select();'></input>
+</center>
+
+
+:::
