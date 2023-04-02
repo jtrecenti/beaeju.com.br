@@ -6,23 +6,85 @@ lightbox: false
 toc: false
 ---
 
-
 ![](images/floral.jpg){fig-align="center" style="margin-top: -30px;"}
+
+::: {.grid}
+
+::: {.g-col-9}
+::: {.content-visible when-profile="portugues"}
+O nosso casamento está chegando!
+
+E gostaríamos de celebrar a nossa união junto à pessoas queridas e que nos querem bem.
+
+Nós preparamos esse site com muito carinho, e por aqui é possível encontrar informações sobre a nossa celebração, sobre a lista de presentes e muito mais!
+:::
+
+::: {.content-visible when-profile="english"}
+Our wedding is coming up!
+
+And we would like to celebrate our union with our loved ones.
+
+We prepared this website with great care, and here you can find information about our celebration, our gift registry, and much more!
+:::
+
+:::
+  
+::: {.g-col-3}
+
+![](images/casal.png){fig-align="center" width="100%" height="auto"}
+
+:::
+  
+:::  
+
+
+
 
 
 
 ::: {.content-visible when-profile="portugues"}
-## Reserve a data!
+## Reserve a data: 14/10/2023
 
-**Data:** 14/10/2023 às 10h00
 
-Em breve mais informações sobre o casamento da Bea e do Ju!
 :::
 
 ::: {.content-visible when-profile="english"}
-## Save the Date
+## Save the Date: October 14th 2023
 
-**Date:** October 14th 2023, 10h AM.
-
-More information soon!
 :::
+
+
+
+<h2 style="color: #b34838;" id="demo"></h2>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("oct 14, 2023 10:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var months = Math.floor(distance/(1000 * 60 * 60 * 24 * 30)); 
+  var days_total = Math.ceil(distance / (1000 * 60 * 60 * 24));
+  var days = Math.floor(days_total - (30*months));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = months + " meses e " + days + " dias até o casamento!";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "Casamento já chegou ;)";
+  }
+}, 1000);
+</script>
