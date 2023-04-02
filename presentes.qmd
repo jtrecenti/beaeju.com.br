@@ -56,12 +56,12 @@ planilha_presentes <- planilha_presentes_raw |>
                                       decimal.mark = ",", 
                                       big.mark = "."),
     estimativa_preco_us = round(estimativa_preco / 5.25),
-    estimativa_preco_us_format = scales::dollar(estimativa_preco_us)
-    # status = dplyr::case_when(
-    #   !status & !is.na(pix_img) ~ as.character(glue::glue("<div class='quarto-figure quarto-figure-center'><figure class='figure'><p><a href='{pix_img}' class='lightbox' data-gallery='pix'><img src='{pix_img}' class='img-fluid figure-img'/></a></p></figure></div>")),
-    #   is.na(pix_img) ~ "",
-    #   TRUE ~ "Já fomos presenteados! Agradecemos muito."
-    # )
+    estimativa_preco_us_format = scales::dollar(estimativa_preco_us),
+    status = dplyr::case_when(
+      !status & !is.na(pix_img) ~ as.character(glue::glue("<img src='{pix_img}' class='img-fluid figure-img'/>")),
+      is.na(pix_img) ~ "",
+      TRUE ~ "Já fomos presenteados! Agradecemos muito."
+    )
   ) |> 
    dplyr::arrange(estimativa_preco)
 
@@ -69,7 +69,7 @@ planilha_presentes <- planilha_presentes_raw |>
 gerar_tabela_presentes <- function(dados) {
  ambiente <- Sys.getenv("QUARTO_PROFILE")
   if(ambiente == "portugues"){
-    stringr::str_glue('![{dados$item} <br> **{dados$estimativa_preco_format}**]({dados$foto}){{group="fotos" description="Caso você queira nos presentear com este item, envie um pix com o valor para ...." }}\n\n')
+    stringr::str_glue('![{dados$item} <br> **{dados$estimativa_preco_format}**]({dados$foto}){{group="fotos" description="Caso você queira nos presentear com este item, envie um pix com o valor para<br/>{dados$status}" }}\n\n')
   } else if(ambiente == "english") {
         stringr::str_glue('![{dados$item} <br> **{dados$estimativa_preco_us_format}**]({dados$foto}){{group="fotos" description="Caso você queira nos presentear com este item, envie um pix com o valor para ...." }}\n\n')
     
