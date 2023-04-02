@@ -1,0 +1,153 @@
+/*-- scss:defaults --*/
+
+/* css styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Source+Sans+Pro&display=swap');
+
+.navbar {
+  background-color: #b34838;
+}
+
+
+
+#quarto-content{
+  background-color: #ffffff;
+}
+
+.sidebar nav[role="doc-toc"] ul > li > a.active {
+  border-left: 1px solid #23593a;
+  color: #23593a !important;
+}
+
+a {
+  color: #23593a;
+}
+
+a:hover {
+  color: #23593a;
+  border-bottom: 0px solid #23593a;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4em;
+  color: #679e7e;
+  text-align: center;
+  font-weight: normal;
+}
+
+body{
+  font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16pt;s
+}
+
+h2, .h2 {
+  border-bottom: 0px solid #679e7e;
+  padding-bottom: .5rem;
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 3em;
+  color: #679e7e;
+  font-weight: normal;
+}
+
+
+.cell {
+  border-style: groove;
+}
+
+
+#message-board {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .message {
+        border: 1px solid #ccc;
+        padding: 10px;
+        background-color: #f8f8f8;
+    }
+
+    .username {
+        font-weight: normal;
+        display: block;
+        margin-bottom: 5px;
+        font-size: 1em;
+        color: #b34838;
+    }
+
+.title {
+  text-align: center;
+  font-weight: normal;
+}
+
+
+.img-fluid {
+  width: auto;
+  height: 10em;
+  max-width: none;
+  padding: 0.5em;
+}
+
+
+.quarto-figure > figure {
+  padding: 0.5em;
+}
+
+
+.navbar #quarto-search.type-overlay .aa-Autocomplete svg.aa-SubmitIcon {
+  color: antiquewhite;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+  color: antiquewhite;
+}
+
+.navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
+   color: antiquewhite;
+}
+
+.navbar-title, .nav-item, .nav-link{
+  color: antiquewhite;
+}
+
+.nav-link.active{
+  color: #fff;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: antiquewhite;
+}
+
+
+
+.navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active {
+  color: #fff;
+  text-decoration-line: revert;
+  text-decoration-style: dotted;
+}
+
+.gslide-title {
+  text-align: center;
+}
+
+.gslide-desc {
+  text-align: center;
+}
+
+.copiar-pix {
+  border-color: gray;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 6px;
+}
+
+
+
+.sidebar nav[role="doc-toc"] ul > li > a.active, .sidebar nav[role="doc-toc"] ul > li > ul > li > a.active {
+
+    border-left: 1px solid #b34838;
+    color: #b34838 !important;
+
+}
