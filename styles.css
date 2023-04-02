@@ -56,6 +56,27 @@ h2, .h2 {
   border-style: groove;
 }
 
+
+#message-board {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .message {
+        border: 1px solid #ccc;
+        padding: 10px;
+        background-color: #f8f8f8;
+    }
+
+    .username {
+        font-weight: normal;
+        display: block;
+        margin-bottom: 5px;
+        font-size: 1em;
+        color: #b34838;
+    }
+
 .title {
   text-align: center;
   font-weight: normal;

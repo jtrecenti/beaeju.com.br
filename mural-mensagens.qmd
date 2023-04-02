@@ -1,8 +1,5 @@
 ---
-title: "Mural de Mensagens"
-filters:
-  - lightbox
-lightbox: off
+# title: "Mural de Mensagens"
 knitr:
   opts_chunk: 
     echo: false
@@ -10,8 +7,16 @@ knitr:
 toc: false
 ---
 
-![](images/floral.jpg){.nolightbox fig-align="center" style="margin-top: -30px;"}
+::: {.content-visible when-profile="portugues"}
+# Mural de Mensagens
+:::
 
+
+::: {.content-visible when-profile="english"}
+# Message Board {#mm2}
+:::
+
+![](images/floral.jpg){.nolightbox fig-align="center" style="margin-top: -30px;"}
 
 <div id="message-board"></div>
 
@@ -63,24 +68,19 @@ initMessageBoard();
 
 </script>
 
-<style>
-    #message-board {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
 
-    .message {
-        border: 1px solid #ccc;
-        padding: 10px;
-        background-color: #f8f8f8;
-    }
 
-    .username {
-        font-weight: normal;
-        display: block;
-        margin-bottom: 5px;
-        font-size: 1em;
-        color: #b34838;
-    }
-</style>
+
+
+
+::: {.content-visible when-profile="portugues"}
+## Envie sua mensagem!
+:::
+
+
+::: {.content-visible when-profile="english"}
+## Send a message to us! 
+:::
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScKZS2MiLQKVJvapOrgXqCi4KLYcw6R5pHR63uOftphTFJeEg/viewform?embedded=true" width="100%" height="924" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+
