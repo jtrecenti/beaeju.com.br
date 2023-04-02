@@ -61,7 +61,8 @@ planilha_presentes <- planilha_presentes_raw |>
       !status & !is.na(pix_img) ~ as.character(glue::glue("<img src='{pix_img}' class='img-fluid figure-img'/>")),
       is.na(pix_img) ~ "",
       TRUE ~ "Já fomos presenteados! Agradecemos muito."
-    )
+    ),
+    id = paste0("botao", seq_len(dplyr::n()))
   ) |> 
    dplyr::arrange(estimativa_preco)
 
@@ -69,7 +70,7 @@ planilha_presentes <- planilha_presentes_raw |>
 gerar_tabela_presentes <- function(dados) {
  ambiente <- Sys.getenv("QUARTO_PROFILE")
   if(ambiente == "portugues"){
-    stringr::str_glue('![{dados$item} <br> **{dados$estimativa_preco_format}**]({dados$foto}){{group="fotos" description="Caso você queira nos presentear com este item, envie um pix com o valor para<br/>{dados$status}" }}\n\n')
+    stringr::str_glue('![{dados$item} <br> **{dados$estimativa_preco_format}**]({dados$foto}){{group="fotos" description="Caso você queira nos presentear com este item, envie um pix com o valor para<br/>{dados$status}<br/>Se quiser usar o código, copie o texto abaixo <br/><input type=\'text\' value=\'{dados$pix_code}\' id=\'{dados$id}\' class=\'copiar-pix\' onClick=\'this.select();\'></input>" }}\n\n')
   } else if(ambiente == "english") {
         stringr::str_glue('![{dados$item_en} <br> **{dados$estimativa_preco_us_format}**]({dados$foto}){{group="fotos" description="If you want to gift us this item, you can transfer **{dados$estimativa_preco_us_format}** with [Paypal](https://www.paypal.com/) to: **beatriz.milz@hotmail.com**" }}\n\n')
     
@@ -250,3 +251,4 @@ planilha_presentes |>
 #   dplyr::filter(categoria == "chatgpt") |> 
 #   gerar_tabela_presentes()
 ```
+

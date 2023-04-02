@@ -110,3 +110,10 @@ h2, .h2 {
 .gslide-desc {
   text-align: center;
 }
+
+.copiar-pix {
+  border-color: gray;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 6px;
+}
