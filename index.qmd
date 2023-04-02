@@ -46,16 +46,21 @@ We prepared this website with great care, and here you can find information abou
 ## Reserve a data: 14/10/2023
 
 
+<h2 style="color: #b34838;" id="demo-pt"></h2>
+
+
 :::
 
 ::: {.content-visible when-profile="english"}
 ## Save the Date: October 14th 2023
 
+
+<h2 style="color: #b34838;" id="demo-en"></h2>
+
 :::
 
 
 
-<h2 style="color: #b34838;" id="demo"></h2>
 
 <script>
 // Set the date we're counting down to
@@ -74,12 +79,13 @@ var x = setInterval(function() {
   var months = Math.floor(distance/(1000 * 60 * 60 * 24 * 30)); 
   var days_total = Math.ceil(distance / (1000 * 60 * 60 * 24));
   var days = Math.floor(days_total - (30*months));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
 
   // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = months + " meses e " + days + " dias até o casamento!";
+  document.getElementById("demo-pt").innerHTML = months + " meses e " + days + " dias até o casamento!";
+  
+    // Display the result in the element with id="demo"
+  document.getElementById("demo-en").innerHTML = months + " months and " + days + " days until the wedding!";
 
   // If the count down is finished, write some text
   if (distance < 0) {

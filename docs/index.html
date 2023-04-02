@@ -143,10 +143,56 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/floral.jpg" class="quarto-discovered-preview-image img-fluid figure-img"></p>
 </figure>
 </div>
-<section id="save-the-date" class="level2">
-<h2 class="anchored" data-anchor-id="save-the-date">Save the Date</h2>
-<p><strong>Data:</strong> 14/10/2023 às 10h00</p>
-<p>Em breve mais informações sobre o casamento da Bea e do Ju!</p>
+<div class="grid">
+<div class="g-col-9">
+<p>O nosso casamento está chegando!</p>
+<p>E gostaríamos de celebrar a nossa união junto à pessoas queridas e que nos querem bem.</p>
+<p>Nós preparamos esse site com muito carinho, e por aqui é possível encontrar informações sobre a nossa celebração, sobre a lista de presentes e muito mais!</p>
+</div>
+<div class="g-col-3">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/casal.png" style="width:100.0%" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="reserve-a-data-14102023" class="level2">
+<h2 class="anchored" data-anchor-id="reserve-a-data-14102023">Reserve a data: 14/10/2023</h2>
+<h2 style="color: #b34838;" id="demo-pt" class="anchored">
+</h2>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("oct 14, 2023 10:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var months = Math.floor(distance/(1000 * 60 * 60 * 24 * 30)); 
+  var days_total = Math.ceil(distance / (1000 * 60 * 60 * 24));
+  var days = Math.floor(days_total - (30*months));
+
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo-pt").innerHTML = months + " meses e " + days + " dias até o casamento!";
+  
+    // Display the result in the element with id="demo"
+  document.getElementById("demo-en").innerHTML = months + " months and " + days + " days until the wedding!";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "Casamento já chegou ;)";
+  }
+}, 1000);
+</script>
 
 
 </section>

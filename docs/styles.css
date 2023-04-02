@@ -37,6 +37,7 @@ h1 {
 
 body{
   font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16pt;s
 }
 
 h2, .h2 {
@@ -101,4 +102,28 @@ h2, .h2 {
   color: #fff;
   text-decoration-line: revert;
   text-decoration-style: dotted;
+}
+
+.gslide-title {
+  text-align: center;
+}
+
+.gslide-desc {
+  text-align: center;
+}
+
+.copiar-pix {
+  border-color: gray;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 6px;
+}
+
+
+
+.sidebar nav[role="doc-toc"] ul > li > a.active, .sidebar nav[role="doc-toc"] ul > li > ul > li > a.active {
+
+    border-left: 1px solid #b34838;
+    color: #b34838 !important;
+
 }
