@@ -71,7 +71,7 @@ gerar_tabela_presentes <- function(dados) {
   if(ambiente == "portugues"){
     stringr::str_glue('![{dados$item} <br> **{dados$estimativa_preco_format}**]({dados$foto}){{group="fotos" description="Caso você queira nos presentear com este item, envie um pix com o valor para<br/>{dados$status}" }}\n\n')
   } else if(ambiente == "english") {
-        stringr::str_glue('![{dados$item} <br> **{dados$estimativa_preco_us_format}**]({dados$foto}){{group="fotos" description="If you want to gift us this item, you can transfer **{dados$estimativa_preco_us_format}** with [Paypal](https://www.paypal.com/) to: **beatriz.milz@hotmail.com**" }}\n\n')
+        stringr::str_glue('![{dados$item_en} <br> **{dados$estimativa_preco_us_format}**]({dados$foto}){{group="fotos" description="If you want to gift us this item, you can transfer **{dados$estimativa_preco_us_format}** with [Paypal](https://www.paypal.com/) to: **beatriz.milz@hotmail.com**" }}\n\n')
     
   }
 
