@@ -33,6 +33,7 @@ h1 {
   font-size: 4em;
   color: #679e7e;
   text-align: center;
+  font-weight: normal;
 }
 
 body{
@@ -44,9 +45,10 @@ h2, .h2 {
   border-bottom: 0px solid #679e7e;
   padding-bottom: .5rem;
   text-align: center;
-    font-family: 'Great Vibes', cursive;
-      font-size: 3em;
+  font-family: 'Great Vibes', cursive;
+  font-size: 3em;
   color: #679e7e;
+  font-weight: normal;
 }
 
 
@@ -56,6 +58,7 @@ h2, .h2 {
 
 .title {
   text-align: center;
+  font-weight: normal;
 }
 
 
