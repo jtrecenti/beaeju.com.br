@@ -15,7 +15,7 @@ toc: false
 
 # Galeria de fotos
 
-![](images/floral.jpg){fig-align="center" style="margin-top: -30px;"}
+![](images/floral.jpg){.nolightbox fig-align="center" style="margin-top: -30px;"}
 
 Fala se esse casal não é muito fofo? Clique na foto para ampliar! 
 
@@ -27,7 +27,7 @@ Se quiser, você também pode ver no <a href="https://photos.app.goo.gl/hb3acxd5
 
 # Photos
 
-![](images/floral.jpg){fig-align="center" style="margin-top: -30px;"}
+![](images/floral.jpg){.nolightbox fig-align="center" style="margin-top: -30px;"}
 
 Isn't this couple cute? Click on the photo to zoom it!
 

@@ -10,7 +10,7 @@ knitr:
 toc: false
 ---
 
-![](images/floral.jpg){fig-align="center" style="margin-top: -30px;"}
+![](images/floral.jpg){.nolightbox fig-align="center" style="margin-top: -30px;"}
 
 
 <div id="message-board"></div>
