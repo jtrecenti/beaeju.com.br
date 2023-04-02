@@ -10,7 +10,7 @@ toc: false
 
 ::: {.grid}
 
-::: {.g-col-9}
+::: {.g-col-6}
 ::: {.content-visible when-profile="portugues"}
 O nosso casamento está chegando!
 
@@ -29,7 +29,7 @@ We prepared this website with great care, and here you can find information abou
 
 :::
   
-::: {.g-col-3}
+::: {.g-col-6}
 
 ![](images/casal.png){fig-align="center" width="100%" height="auto"}
 
