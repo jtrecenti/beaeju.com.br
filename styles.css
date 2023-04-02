@@ -102,3 +102,11 @@ h2, .h2 {
   text-decoration-line: revert;
   text-decoration-style: dotted;
 }
+
+.gslide-title {
+  text-align: center;
+}
+
+.gslide-desc {
+  text-align: center;
+}
