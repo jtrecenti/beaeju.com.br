@@ -14,6 +14,8 @@ toc: false
 ::: {.content-visible when-profile="portugues"}
 # Lista de Presentes
 
+![](images/floral.jpg){fig-align="center" style="margin-top: -30px;"}
+
 Esta lista de presentes é feita de produtos desejados Cada item representa um valor que será convertido em dinheiro.
 
 Lembre-se que o presente é completamente opcional! O que mais queremos é a presença de pessoas queridas e que torcem pela nossa felicidade!
@@ -22,6 +24,8 @@ Lembre-se que o presente é completamente opcional! O que mais queremos é a pre
 
 ::: {.content-visible when-profile="english"}
 # Wedding gifts
+
+![](images/floral.jpg){fig-align="center" style="margin-top: -30px;"}
 
 This gift list is made up of itens that we need or desire. Each item represents a value that will be converted into cash.
 

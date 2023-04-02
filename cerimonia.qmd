@@ -12,11 +12,17 @@ toc: false
 
 ::: {.content-visible when-profile="portugues"}
 # Cerimônia e festa
+
+![](images/floral.jpg){fig-align="center" style="margin-top: -30px;"}
+
 A cerimônia e a festa de casamento acontecerão no Sítio São Jorge - Demarchi, que fica em São Bernardo do Campo - SP.
 :::
 
 ::: {.content-visible when-profile="english"}
 # Ceremony and Wedding party
+
+![](images/floral.jpg){fig-align="center" style="margin-top: -30px;"}
+
 The ceremony and wedding party will take place at Sítio São Jorge - Demarchi, located in São Bernardo do Campo - São Paulo, Brazil.
 :::
 

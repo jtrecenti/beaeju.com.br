@@ -10,4 +10,6 @@ knitr:
 toc: false
 ---
 
+![](images/floral.jpg){fig-align="center" style="margin-top: -30px;"}
+
 Em breve!
