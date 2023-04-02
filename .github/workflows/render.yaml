@@ -33,6 +33,8 @@ jobs:
             any::glue
             
       - name: render
+        env:
+          GOOGLESHEETS: ${{ secrets.GOOGLESHEETS }}      
         run: |
           quarto render --profile portugues
           quarto render --profile english
