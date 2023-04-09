@@ -1,5 +1,26 @@
 [
   {
+    "objectID": "index.html#reserve-a-data-14102023",
+    "href": "index.html#reserve-a-data-14102023",
+    "title": "Beatriz & Julio",
+    "section": "Reserve a data: 14/10/2023",
+    "text": "Reserve a data: 14/10/2023"
+  },
+  {
+    "objectID": "mural-mensagens.html#envie-sua-mensagem",
+    "href": "mural-mensagens.html#envie-sua-mensagem",
+    "title": "Beatriz e Julio",
+    "section": "Envie sua mensagem!",
+    "text": "Envie sua mensagem!"
+  },
+  {
+    "objectID": "confirmar-presenca.html",
+    "href": "confirmar-presenca.html",
+    "title": "Confirmar Presença",
+    "section": "",
+    "text": "Em breve!"
+  },
+  {
     "objectID": "cerimonia.html",
     "href": "cerimonia.html",
     "title": "Beatriz e Julio",
@@ -12,34 +33,6 @@
     "title": "Beatriz e Julio",
     "section": "Mapa",
     "text": "Mapa"
-  },
-  {
-    "objectID": "confirmar-presenca.html",
-    "href": "confirmar-presenca.html",
-    "title": "Confirmar Presença",
-    "section": "",
-    "text": "Em breve!"
-  },
-  {
-    "objectID": "galeria.html",
-    "href": "galeria.html",
-    "title": "Beatriz e Julio",
-    "section": "",
-    "text": "Galeria de fotos\n\n\n\n\n\nFala se esse casal não é muito fofo? Clique na foto para ampliar!\nSe quiser, você também pode ver no Google Photos por aqui."
-  },
-  {
-    "objectID": "mural-mensagens.html#envie-sua-mensagem",
-    "href": "mural-mensagens.html#envie-sua-mensagem",
-    "title": "Beatriz e Julio",
-    "section": "Envie sua mensagem!",
-    "text": "Envie sua mensagem!"
-  },
-  {
-    "objectID": "index.html#reserve-a-data-14102023",
-    "href": "index.html#reserve-a-data-14102023",
-    "title": "Beatriz & Julio",
-    "section": "Reserve a data: 14/10/2023",
-    "text": "Reserve a data: 14/10/2023"
   },
   {
     "objectID": "presentes.html",
@@ -110,5 +103,12 @@
     "title": "Beatriz e Julio",
     "section": "Dinheiro",
     "text": "Dinheiro\nCaso queira enviar algum valor diferente dos valores dos itens acima, ou deixar para que os noivos escolham o presente, você pode utilizar o código PIX abaixo e enviar o valor que quiser!\n\n\n\n\nPix"
+  },
+  {
+    "objectID": "galeria.html",
+    "href": "galeria.html",
+    "title": "Beatriz e Julio",
+    "section": "",
+    "text": "Galeria de fotos\n\n\n\n\n\nFala se esse casal não é muito fofo? Clique na foto para ampliar!\nSe quiser, você também pode ver no Google Photos por aqui."
   }
 ]

@@ -129,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/floral.jpg" class="nolightbox img-fluid figure-img"></p>
 </figure>
 </div>
-<div id="message-board">
+<div id="message-board" class="grid">
 
 </div>
 <script>
@@ -150,16 +150,22 @@ async function fetchCSVData(url) {
 
 function createMessageElement(messageData) {
     const messageElement = document.createElement('div');
-    messageElement.classList.add('message');
+    
+    messageElement.classList.add('g-col-12');
+    messageElement.classList.add('g-col-md-6');
+    
+    const innerDiv = document.createElement('div');
+    innerDiv.classList.add('message');
+    messageElement.appendChild(innerDiv);
 
     const usernameElement = document.createElement('span');
     usernameElement.classList.add('username');
     usernameElement.textContent = messageData.username;
-    messageElement.appendChild(usernameElement);
+    innerDiv.appendChild(usernameElement);
 
     const messageContentElement = document.createElement('p');
     messageContentElement.textContent = messageData.message;
-    messageElement.appendChild(messageContentElement);
+    innerDiv.appendChild(messageContentElement);
 
     return messageElement;
 }
