@@ -36,6 +36,8 @@ Remember that **the gift is completely optional**! What we most want is the pres
 
 
 ```{r include=FALSE}
+
+googlesheets4::gs4_deauth()
 url_sheets <- "https://docs.google.com/spreadsheets/d/1_VsPKJZ6wz2HvabvGI6V-oW-1923KE_FyfKsvy-T2yc/edit#gid=0"
 
 googlesheets4::gs4_auth(path = Sys.getenv("GOOGLESHEETS"))
@@ -71,9 +73,9 @@ planilha_presentes <- planilha_presentes_raw |>
 gerar_tabela_presentes <- function(dados) {
  ambiente <- Sys.getenv("QUARTO_PROFILE")
   if(ambiente == "portugues"){
-    stringr::str_glue('![{dados$item} <br> **{dados$estimativa_preco_format}**]({dados$foto}){{group="fotos" description="Caso você queira nos presentear com este item, envie um pix com o valor para<br/>{dados$status}<br/>Se quiser usar o código PIX, copie o texto abaixo <br/><input type=\'text\' value=\'{dados$pix_code}\' id=\'{dados$id}\' class=\'copiar-pix\' onClick=\'this.select();\'></input>" }}\n\n')
+    stringr::str_glue(':::{{.g-col-12 .g-col-md-6}}\n\n![{dados$item} <br> **{dados$estimativa_preco_format}**]({dados$foto}){{group="fotos" description="Caso você queira nos presentear com este item, envie um pix com o valor para<br/>{dados$status}<br/>Se quiser usar o código PIX, copie o texto abaixo <br/><input type=\'text\' value=\'{dados$pix_code}\' id=\'{dados$id}\' class=\'copiar-pix\' onClick=\'this.select();\'></input>" }}\n:::\n')
   } else if(ambiente == "english") {
-        stringr::str_glue('![{dados$item_en} <br> **{dados$estimativa_preco_us_format}**]({dados$foto}){{group="fotos" description="If you want to gift us this item, you can transfer **{dados$estimativa_preco_us_format}** with [Paypal](https://www.paypal.com/) to: **beatriz.milz@hotmail.com**" }}\n\n')
+        stringr::str_glue(':::{{.g-col-12 .g-col-md-6}}\n\n![{dados$item_en} <br> **{dados$estimativa_preco_us_format}**]({dados$foto}){{group="fotos" description="If you want to gift us this item, you can transfer **{dados$estimativa_preco_us_format}** with [Paypal](https://www.paypal.com/) to: **beatriz.milz@hotmail.com**" }}\n:::\n')
     
   }
 
@@ -81,7 +83,6 @@ gerar_tabela_presentes <- function(dados) {
 }
 
 ```
-
 
 
 ::: {.content-visible when-profile="portugues"}
@@ -95,12 +96,16 @@ gerar_tabela_presentes <- function(dados) {
 :::
 
 
-::: {layout-ncol="2"}
+:::{.grid}
+
+
 ```{r}
 planilha_presentes |>
   dplyr::filter(categoria == "utensilios_domesticos") |>
   gerar_tabela_presentes()
 ```
+
+
 :::
 
 
@@ -115,14 +120,16 @@ planilha_presentes |>
 ##  Bed & Bath
 :::
 
-::: {layout-ncol="2"}
+:::{.grid}
+
+
 ```{r}
 planilha_presentes |>
   dplyr::filter(categoria == "cama_mesa_banho") |>
   gerar_tabela_presentes()
 ```
-:::
 
+:::
 
 
 ::: {.content-visible when-profile="portugues"}
@@ -136,14 +143,16 @@ planilha_presentes |>
 :::
 
 
-::: {layout-ncol="2"}
+:::{.grid}
+
+
 ```{r}
 planilha_presentes |> 
   dplyr::filter(categoria == "mimos_noiva") |> 
   gerar_tabela_presentes()
 ```
-:::
 
+:::
 
 ::: {.content-visible when-profile="portugues"}
 
@@ -156,7 +165,9 @@ planilha_presentes |>
 :::
 
 
-::: {layout-ncol="2"}
+:::{.grid}
+
+
 ```{r}
 planilha_presentes |> 
   dplyr::filter(categoria == "mimos_noivo") |> 
@@ -175,13 +186,16 @@ planilha_presentes |>
 ##  Honeymoon
 :::
 
-::: {layout-ncol="2"}
+:::{.grid}
+
+
 ```{r}
 planilha_presentes |> 
   dplyr::filter(categoria == "luademel") |> 
   dplyr::arrange(dplyr::desc(estimativa_preco)) |> 
   gerar_tabela_presentes()
 ```
+
 :::
 
 
@@ -195,12 +209,15 @@ planilha_presentes |>
 ##  Household Appliances 
 :::
 
-::: {layout-ncol="2"}
+:::{.grid}
+
+
 ```{r}
 planilha_presentes |> 
   dplyr::filter(categoria == "eletroportateis") |> 
   gerar_tabela_presentes()
 ```
+
 :::
 
 ::: {.content-visible when-profile="portugues"}
@@ -214,14 +231,16 @@ planilha_presentes |>
 :::
 
 
-::: {layout-ncol="2"}
+:::{.grid}
+
+
 ```{r}
 planilha_presentes |> 
   dplyr::filter(categoria == "moveis") |> 
   gerar_tabela_presentes()
 ```
-:::
 
+:::
 
 ::: {.content-visible when-profile="portugues"}
 
@@ -234,12 +253,15 @@ planilha_presentes |>
 :::
 
 
-::: {layout-ncol="2"}
+:::{.grid}
+
+
 ```{r}
 planilha_presentes |> 
   dplyr::filter(categoria == "eletrodomesticos") |> 
   gerar_tabela_presentes()
 ```
+
 :::
 
 ::: {.content-visible when-profile="portugues"}
