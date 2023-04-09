@@ -4,6 +4,7 @@
 
 url_sheets <- "https://docs.google.com/spreadsheets/d/1_VsPKJZ6wz2HvabvGI6V-oW-1923KE_FyfKsvy-T2yc/edit#gid=0"
 
+categorias <- c("utensilios_domesticos", "cama_mesa_banho", "mimos_noiva", "mimos_noivo", "eletroportateis", "moveis", "eletrodomesticos", "luademel")
 googlesheets4::gs4_auth(email = Sys.getenv("GSHEETS_EMAIL"))
 
 planilha_presentes <- googlesheets4::read_sheet(url_sheets) |> 
