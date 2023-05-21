@@ -137,16 +137,27 @@ ul.task-list li input[type="checkbox"] {
 <div id="message-board" class="grid">
 
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <script>
+
 
 async function fetchCSVData(url) {
     const response = await fetch(url);
     const text = await response.text();
-    const data = text.split('\n').slice(1).map(row => {
-        const columns = row.split(',');
+    
+    const results = Papa.parse(text, {
+        header: false,
+        skipEmptyLines: true,
+        dynamicTyping: false,
+    });
+
+    // Here the result will be an array of objects where each object represents a row from your CSV.
+    // The keys in each object will correspond to the headers in your CSV.
+    // You can adjust it to your needs. For instance:
+    const data = results.data.slice(1).map(row => {
         return {
-            username: columns[1].trim(),
-            message: columns[3].trim(),
+            username: row[1].trim(),
+            message: row[3].trim(),
         };
     });
 
