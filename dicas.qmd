@@ -1,0 +1,65 @@
+---
+# title: "Lista de Presentes"
+filters:
+  - lightbox
+lightbox: auto
+knitr:
+  opts_chunk: 
+    echo: false
+    message: false
+    results: asis
+toc: true
+---
+
+::: {.content-visible when-profile="portugues"}
+# Dicas
+
+![](images/floral.jpg){.nolightbox fig-align="center" style="margin-top: -30px;"}
+
+## Traje
+
+Recomendamos o traje esporte fino.
+
+Queridas convidadas, **evitem** usar as cores terracota e verde-esmeralda pois será a cor dos vestidos das madrinhas e mães.
+
+E lembre-se: A cor branca é só para a noiva!
+
+## Hotéis
+
+Para pessoas que moram fora da Região Metropolitana de São Paulo, listamos alguns hotéis na cidade de São Bernardo do Campo:
+
+:::
+
+::: {.content-visible when-profile="english"}
+# Tips
+
+![](images/floral.jpg){.nolightbox fig-align="center" style="margin-top: -30px;"}
+
+## Suit
+
+We recommend smart casual attire.
+
+Dear guests, **avoid** using the terracotta and emerald green colors as they will be the color of the bridesmaids' and mothers' dresses.
+
+And remember: The white color is just for the bride!
+
+## Hotels
+
+For people who live outside the Metropolitan Region of São Paulo, we have listed some hotels in the city of São Bernardo do Campo:
+
+:::
+
+-   [Ibis Budget São Bernardo do Campo](https://www.booking.com/Share-tbeuqT){target="_blank"}
+
+[![Ibis Budget São Bernardo do Campo](https://cf.bstatic.com/xdata/images/hotel/max1280x900/264200718.jpg?k=525091efbe81e3b8338f611e4223e75662895b326d4ce3b09d7211293b04fa26&o=&hp=1){fig-alt="Ibis SBC" fig-align="center" width="50%"}](https://www.booking.com/Share-tbeuqT){target="_blank"}
+
+
+-   [Ibis São Bernardo do Campo](https://www.booking.com/Share-SEEVjF){target="_blank"}
+
+[![Ibis São Bernardo do Campo](https://cf.bstatic.com/xdata/images/hotel/max1280x900/114619253.jpg?k=2bc531670305f044c224f12bcda8e24f1d1315cba3839154ccabcda94e1afa57&o=&hp=1){fig-alt="Ibis SBC" fig-align="center" width="50%"}](https://www.booking.com/Share-SEEVjF){target="_blank"}
+
+
+-   [Twin Towers Flat](https://www.booking.com/Share-SEEVjF){target="_blank"}
+
+[![Twin Towers Flat](https://cf.bstatic.com/xdata/images/hotel/max1280x900/52388501.jpg?k=f9ff4e2e9fe7632d85e320af3893f1c46d184393d7fa9b237aac47f999363e83&o=&hp=1){fig-alt="Twin Towers Flat" fig-align="center" width="50%"}](https://www.booking.com/Share-Z7i2UT){target="_blank"}
+
