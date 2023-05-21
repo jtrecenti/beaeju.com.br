@@ -10,6 +10,8 @@ website:
     left:
       - text: "Ceremony and Wedding party"
         href: cerimonia.qmd
+      - text: "Tips"
+        href: dicas.qmd        
       # - text: "Confirmar presença"
       #   href: confirmar-presenca.qmd
       - text: "Photos"
