@@ -242,27 +242,7 @@ planilha_presentes |>
 
 :::
 
-::: {.content-visible when-profile="portugues"}
 
-## Eletrodomésticos
-:::
-
-::: {.content-visible when-profile="english"}
-
-##  Electric Appliances
-:::
-
-
-:::{.grid}
-
-
-```{r}
-planilha_presentes |> 
-  dplyr::filter(categoria == "eletrodomesticos") |> 
-  gerar_tabela_presentes()
-```
-
-:::
 
 ::: {.content-visible when-profile="portugues"}
 ## Dinheiro
