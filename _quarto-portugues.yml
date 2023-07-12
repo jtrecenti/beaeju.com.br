@@ -12,8 +12,8 @@ website:
         href: cerimonia.qmd
       - text: "Dicas"
         href: dicas.qmd             
-      # - text: "Confirmar presença"
-      #   href: confirmar-presenca.qmd
+      - text: "Confirmar presença"
+        href: confirmar-presenca.qmd
       - text: "Galeria de fotos"
         href: galeria.qmd
       - text: "Mural de mensagens"
