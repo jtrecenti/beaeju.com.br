@@ -8,8 +8,14 @@ toc: false
 
 ![](images/floral.jpg){.nolightbox fig-align="center" style="margin-top: -30px;"}
 
-::: {.grid}
+<center><b>
+[CONFIRME SUA PRESENÇA](confirmar-presenca.qmd)
+</b>
+</center> <br>
 
+
+
+::: grid
 ::: {.g-col-12 .g-col-md-6}
 ::: {.content-visible when-profile="portugues"}
 O nosso casamento está chegando!
@@ -26,42 +32,30 @@ And we would like to celebrate our union with our loved ones.
 
 We prepared this website with great care, and here you can find information about our celebration, our gift registry, and much more!
 :::
-
 :::
-  
+
 ::: {.g-col-12 .g-col-md-6}
-
 ![](images/casal.png){fig-align="center" width="100%" height="auto"}
-
 :::
-  
-:::  
-
-
-
-
-
+:::
 
 ::: {.content-visible when-profile="portugues"}
 ## Reserve a data: 14/10/2023
 
+<h2 style="color: #b34838;" id="demo-pt">
 
-<h2 style="color: #b34838;" id="demo-pt"></h2>
-
-
+</h2>
 :::
 
 ::: {.content-visible when-profile="english"}
 ## Save the Date: October 14th 2023
 
+<h2 style="color: #b34838;" id="demo-en">
 
-<h2 style="color: #b34838;" id="demo-en"></h2>
-
+</h2>
 :::
 
-
-
-
+```{=html}
 <script>
 // Set the date we're counting down to
 var countDownDate = new Date("oct 14, 2023 10:00:00").getTime();
@@ -94,3 +88,4 @@ var x = setInterval(function() {
   }
 }, 1000);
 </script>
+```
