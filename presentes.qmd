@@ -61,7 +61,7 @@ planilha_presentes <- planilha_presentes_raw |>
     estimativa_preco_us = round(estimativa_preco / 5.25),
     estimativa_preco_us_format = scales::dollar(estimativa_preco_us),
     status = dplyr::case_when(
-      !status & !is.na(pix_img) ~ as.character(glue::glue("<img src='{pix_img}' class='img-fluid figure-img'/>")),
+     !is.na(pix_img) ~ as.character(glue::glue("<img src='{pix_img}' class='img-fluid figure-img'/>")),
       is.na(pix_img) ~ "",
       TRUE ~ "Já fomos presenteados! Agradecemos muito."
     ),
@@ -69,7 +69,13 @@ planilha_presentes <- planilha_presentes_raw |>
   ) |> 
    dplyr::arrange(estimativa_preco)
 
+planilha_presentes_nao_recebidos <- planilha_presentes |> 
+  dplyr::filter(status_recebimento == FALSE)
 
+planilha_presentes_recebidos <- planilha_presentes |> 
+  dplyr::filter(status_recebimento == TRUE)
+  
+  
 gerar_tabela_presentes <- function(dados) {
  ambiente <- Sys.getenv("QUARTO_PROFILE")
   if(ambiente == "portugues"){
@@ -78,8 +84,11 @@ gerar_tabela_presentes <- function(dados) {
         stringr::str_glue(':::{{.g-col-12 .g-col-md-6}}\n\n![{dados$item_en} <br> **{dados$estimativa_preco_us_format}**]({dados$foto}){{group="fotos" description="If you want to gift us this item, you can transfer **{dados$estimativa_preco_us_format}** with [Paypal](https://www.paypal.com/) to: **beatriz.milz@hotmail.com**" }}\n:::\n')
     
   }
+}
 
-  
+gerar_tabela_presentes_recebidos <- function(dados) {
+
+    stringr::str_glue(':::{{.g-col-12 .g-col-md-6}}\n\n![{dados$item}]({dados$foto}){{group="fotos_recebidos"}}\n:::\n')
 }
 
 ```
@@ -100,7 +109,7 @@ gerar_tabela_presentes <- function(dados) {
 
 
 ```{r}
-planilha_presentes |>
+planilha_presentes_nao_recebidos |>
   dplyr::filter(categoria == "utensilios_domesticos") |>
   gerar_tabela_presentes()
 ```
@@ -124,7 +133,7 @@ planilha_presentes |>
 
 
 ```{r}
-planilha_presentes |>
+planilha_presentes_nao_recebidos |>
   dplyr::filter(categoria == "cama_mesa_banho") |>
   gerar_tabela_presentes()
 ```
@@ -147,7 +156,7 @@ planilha_presentes |>
 
 
 ```{r}
-planilha_presentes |> 
+planilha_presentes_nao_recebidos |> 
   dplyr::filter(categoria == "mimos_noiva") |> 
   gerar_tabela_presentes()
 ```
@@ -169,7 +178,7 @@ planilha_presentes |>
 
 
 ```{r}
-planilha_presentes |> 
+planilha_presentes_nao_recebidos |> 
   dplyr::filter(categoria == "mimos_noivo") |> 
   gerar_tabela_presentes()
 ```
@@ -190,7 +199,7 @@ planilha_presentes |>
 
 
 ```{r}
-planilha_presentes |> 
+planilha_presentes_nao_recebidos |> 
   dplyr::filter(categoria == "luademel") |> 
   dplyr::arrange(dplyr::desc(estimativa_preco)) |> 
   gerar_tabela_presentes()
@@ -213,7 +222,7 @@ planilha_presentes |>
 
 
 ```{r}
-planilha_presentes |> 
+planilha_presentes_nao_recebidos |> 
   dplyr::filter(categoria == "eletroportateis") |> 
   gerar_tabela_presentes()
 ```
@@ -235,7 +244,7 @@ planilha_presentes |>
 
 
 ```{r}
-planilha_presentes |> 
+planilha_presentes_nao_recebidos |> 
   dplyr::filter(categoria == "moveis") |> 
   gerar_tabela_presentes()
 ```
@@ -259,10 +268,21 @@ Caso queira enviar algum valor diferente dos valores dos itens acima, ou deixar 
 :::
 
 
+
 ::: {.content-visible when-profile="english"}
 
 ##  Money
 
 If you want to gift us a iten, or leave the choice for us, you can transfer the money with [Paypal](https://www.paypal.com/) to: **beatriz.milz@hotmail.com**".
 :::
+
+
+## Recebidos!
+
+Agradecemos pelos presentes recebidos! <3
+
+```{r}
+planilha_presentes_recebidos |> 
+  gerar_tabela_presentes_recebidos()
+```
 
