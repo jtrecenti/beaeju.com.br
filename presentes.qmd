@@ -234,9 +234,11 @@ If you want to gift us a iten, or leave the choice for us, you can transfer the 
 
 ## Recebidos!
 
-Agradecemos pelos presentes recebidos! \<3
+Agradecemos pelos presentes recebidos! 🥰 ❤️
 
+::: grid
 ```{r}
 planilha_presentes_recebidos |> 
   gerar_tabela_presentes_recebidos()
 ```
+:::
