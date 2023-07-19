@@ -5,6 +5,8 @@ form_raw <-
 
 lista_convite <- form_raw |>
   tidyr::drop_na(nomes_arrumados) |>
+  dplyr::filter(status_envio == FALSE) |> 
+  # dplyr::filter(stringr::str_detect(nomes_arrumados, "João")) |> 
   tibble::rowid_to_column() |> 
   dplyr::mutate(
     data_envio = Sys.Date(),
