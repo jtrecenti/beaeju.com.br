@@ -213,7 +213,7 @@ planilha_presentes_nao_recebidos |>
 :::
 
 ::: {.content-visible when-profile="portugues"}
-## Dinheiro
+# Dinheiro
 
 Caso queira enviar algum valor diferente dos valores dos itens acima, ou deixar para que os noivos escolham o presente, você pode utilizar o código PIX abaixo e enviar o valor que quiser!
 
@@ -227,12 +227,12 @@ Caso queira enviar algum valor diferente dos valores dos itens acima, ou deixar 
 :::
 
 ::: {.content-visible when-profile="english"}
-## Money
+# Money
 
 If you want to gift us a iten, or leave the choice for us, you can transfer the money with [Paypal](https://www.paypal.com/) to: **beatriz.milz\@hotmail.com**".
 :::
 
-## Recebidos!
+# Recebidos!
 
 Agradecemos pelos presentes recebidos! 🥰 ❤️
 
