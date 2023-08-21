@@ -30,7 +30,7 @@ As crianças são participantes muito especiais neste dia! Caso você vá levar 
 
 ## Hotéis
 
-Para pessoas que moram fora da Região Metropolitana de São Paulo, listamos alguns hotéis na cidade de São Bernardo do Campo:
+Para pessoas que moram fora da Região Metropolitana de São Paulo, listamos alguns hotéis na cidade de São Bernardo do Campo. Esses hotéis ficam próximos ao **Shopping Metrópole**, cerca de 15 minutos do local da cerimônia (de carro).
 :::
 
 ::: {.content-visible when-profile="english"}
@@ -48,7 +48,7 @@ And remember: The white color is just for the bride!
 
 ## Hotels
 
-For people who live outside the Metropolitan Region of São Paulo, we have listed some hotels in the city of São Bernardo do Campo:
+For people who live outside the Metropolitan Region of São Paulo, we have listed some hotels in the city of São Bernardo do Campo. 
 :::
 
 -   [Ibis Budget São Bernardo do Campo](https://www.booking.com/Share-tbeuqT){target="_blank"}
@@ -59,6 +59,6 @@ For people who live outside the Metropolitan Region of São Paulo, we have liste
 
 [![Ibis São Bernardo do Campo](https://cf.bstatic.com/xdata/images/hotel/max1280x900/114619253.jpg?k=2bc531670305f044c224f12bcda8e24f1d1315cba3839154ccabcda94e1afa57&o=&hp=1){fig-alt="Ibis SBC" fig-align="center" width="50%"}](https://www.booking.com/Share-SEEVjF)
 
--   [Twin Towers Flat](https://www.booking.com/Share-SEEVjF){target="_blank"}
+-   [Aparthotel Adagio Sao Bernardo Do Campo](https://www.booking.com/Share-6ydbdy6){target="_blank"}
 
-[![Twin Towers Flat](https://cf.bstatic.com/xdata/images/hotel/max1280x900/52388501.jpg?k=f9ff4e2e9fe7632d85e320af3893f1c46d184393d7fa9b237aac47f999363e83&o=&hp=1){fig-alt="Twin Towers Flat" fig-align="center" width="50%"}](https://www.booking.com/Share-Z7i2UT)
+[![Aparthotel Adagio Sao Bernardo Do Campo](https://cf.bstatic.com/xdata/images/hotel/max1280x900/111861794.jpg?k=b17f4042dc6f31a1155df17e047055e391597c65368d4cebd34c35253a3410d5&o=&hp=1){fig-alt="Aparthotel Adagio Sao Bernardo Do Campo" fig-align="center" width="50%"}](https://www.booking.com/Share-6ydbdy6)
