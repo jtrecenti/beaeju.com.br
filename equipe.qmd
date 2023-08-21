@@ -1,0 +1,65 @@
+---
+title: "Equipe"
+filters:
+  - lightbox
+lightbox: auto
+knitr:
+  opts_chunk: 
+    echo: false
+    message: false
+toc: false
+---
+
+![](images/floral.jpg){.nolightbox fig-align="center" style="margin-top: -30px;"}
+
+```{r}
+tab_fornecedores <- tibble::tribble(
+  ~"categoria", ~"nome", ~"url",
+  "Espaço", "Sítio São Jorge - Demarchi", "https://www.instagram.com/sitiosaojorge/",
+  
+  "Decoração", "Odeon Decorações", "https://www.instagram.com/odeondecor/",
+  
+  "Assessoria", "Realizando Assessoria", "https://www.instagram.com/realizandoassessoria/",
+  
+  
+  "Alianças", "Monte Carlo", "https://www.instagram.com/montecarlojoias/",
+  
+  "Bem casados", "Ana Cristina Bem Casados", "https://www.instagram.com/anacristinabemcasados/",
+  
+  "Lembrança - Chinelos personalizados", "CustumiZú", "https://www.instagram.com/custumizu/",
+  
+  "Doces finos", "Cocoa Art - Amanda Borges", "https://www.instagram.com/cocoa.art.chocolates/",
+  
+  
+  "Fotografia", "Chocolatte Fotoarte", "https://www.instagram.com/chocolattefotoarte/",
+  
+  
+  "Maquiagem", "Ju Toledo", "https://www.instagram.com/jutoledonoivas/",
+  
+  "Música - Cerimônia", "Toccata Coral e Orquestra", "https://www.instagram.com/coraltoccata/",
+  
+  "Papelaria", "Rosa Conviteria", "",
+  
+  "Presente para padrinhos e madrinhas", "Cultive mimos", "https://www.instagram.com/cultivemimos/",
+  
+  "Porta aliança", "Meire e Cris | Bordado à mão", "https://www.instagram.com/borda.vieira/",
+  
+  "Recreação infantil", "Bambalalão Recreação", "https://www.instagram.com/bambalalao.recreacao/",
+  
+  "Sapato da noiva", "Durval Calçados", "https://www.instagram.com/durvalcalcados/",
+  
+  "Traje do noivo", "Maximus Rigor", "https://www.instagram.com/maximusrigor/",
+  
+  "Vestido da noiva", "Ateliê Juliana Santos", "https://www.instagram.com/ateliejs/"
+  
+
+  
+)
+
+tab_fornecedores |> 
+  dplyr::mutate(link = glue::glue("[{nome}]({url})")) |> 
+  dplyr::select(categoria, link) |> 
+  dplyr::arrange(categoria) |> 
+  knitr::kable()
+```
+
