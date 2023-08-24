@@ -175,7 +175,7 @@ function createMessageElement(messageData) {
     innerDiv.classList.add('message');
     messageElement.appendChild(innerDiv);
 
-    const usernameElement = document.createElement('span');
+    const usernameElement = document.createElement('strong');
     usernameElement.classList.add('username');
     usernameElement.textContent = messageData.username;
     innerDiv.appendChild(usernameElement);
