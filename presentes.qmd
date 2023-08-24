@@ -232,9 +232,19 @@ Caso queira enviar algum valor diferente dos valores dos itens acima, ou deixar 
 If you want to gift us a iten, or leave the choice for us, you can transfer the money with [Paypal](https://www.paypal.com/) to: **beatriz.milz\@hotmail.com**".
 :::
 
+
+::: {.content-visible when-profile="portugues"}
 # Recebidos!
 
 Agradecemos pelos presentes recebidos! 🥰 ❤️
+:::
+
+::: {.content-visible when-profile="english"}
+# Received gifs!
+
+We are grateful for the gifts that we received! 🥰 ❤️
+:::
+
 
 ::: grid
 ```{r}

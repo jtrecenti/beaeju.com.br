@@ -8,12 +8,6 @@ toc: false
 
 ![](images/floral.jpg){.nolightbox fig-align="center" style="margin-top: -30px;"}
 
-<center><b>
-[CONFIRME SUA PRESENÇA](confirmar-presenca.qmd)
-</b>
-</center> <br>
-
-
 
 ::: grid
 ::: {.g-col-12 .g-col-md-6}
@@ -35,12 +29,13 @@ We prepared this website with great care, and here you can find information abou
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-![](images/casal.png){fig-align="center" width="100%" height="auto"}
+![](images/pre-wedding/PW_Beatriz e Julio-16.jpg){fig-align="center" width="100%" height="auto"}
+Foto por *[Chocolatte Fotoarte](https://www.chocolatte-fotoarte.com/)*.
 :::
 :::
 
 ::: {.content-visible when-profile="portugues"}
-## Reserve a data: 14/10/2023
+## 14/10/2023
 
 <h2 style="color: #b34838;" id="demo-pt">
 
@@ -48,7 +43,7 @@ We prepared this website with great care, and here you can find information abou
 :::
 
 ::: {.content-visible when-profile="english"}
-## Save the Date: October 14th 2023
+## October 14th 2023
 
 <h2 style="color: #b34838;" id="demo-en">
 
