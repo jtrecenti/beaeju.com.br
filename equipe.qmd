@@ -43,6 +43,8 @@ tab_fornecedores <- tibble::tribble(
   
   "Música - Cerimônia", "Toccata Coral e Orquestra", "https://www.instagram.com/coraltoccata/",
   
+    "Música - Festa", "Audio7", "https://www.instagram.com/audiosete/",
+  
   "Papelaria", "Rosa Conviteria", "https://www.instagram.com/rosaconviteria",
   
   "Presente para padrinhos e madrinhas", "Cultive mimos", "https://www.instagram.com/cultivemimos/",
@@ -65,6 +67,6 @@ tab_fornecedores |>
   dplyr::mutate(link = glue::glue("[{nome}]({url})")) |> 
   dplyr::select(categoria, link) |> 
   dplyr::arrange(categoria) |> 
-  knitr::kable()
+  knitr::kable(col.names = c("Categoria", "Fornecedor"))
 ```
 
