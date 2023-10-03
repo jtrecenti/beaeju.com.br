@@ -33,12 +33,17 @@ tab_fornecedores <- tibble::tribble(
   
   "Fotografia", "Chocolatte Fotoarte", "https://www.instagram.com/chocolattefotoarte/",
   
+    "Totem de fotos", "Foto Cabine Estilo e Arte", "https://www.instagram.com/fotocabineestiloearte/",
   
-  "Maquiagem", "Ju Toledo", "https://www.instagram.com/jutoledonoivas/",
+      "Sousplat", "MW FESTAS", "https://www.instagram.com/mwfestas_/",
+        "Música criada para os noivos", "Dalio", "https://www.instagram.com/dalio.jp/",
+  
+  
+  "Maquiagem da noiva", "Ju Toledo", "https://www.instagram.com/jutoledonoivas/",
   
   "Música - Cerimônia", "Toccata Coral e Orquestra", "https://www.instagram.com/coraltoccata/",
   
-  "Papelaria", "Rosa Conviteria", "",
+  "Papelaria", "Rosa Conviteria", "https://www.instagram.com/rosaconviteria",
   
   "Presente para padrinhos e madrinhas", "Cultive mimos", "https://www.instagram.com/cultivemimos/",
   
@@ -46,9 +51,9 @@ tab_fornecedores <- tibble::tribble(
   
   "Recreação infantil", "Bambalalão Recreação", "https://www.instagram.com/bambalalao.recreacao/",
   
-  "Sapato da noiva", "Durval Calçados", "https://www.instagram.com/durvalcalcados/",
+  # "Sapato da noiva", "Durval Calçados", "https://www.instagram.com/durvalcalcados/",
   
-  "Traje do noivo", "Maximus Rigor", "https://www.instagram.com/maximusrigor/",
+  "Traje do noivo e padrinhos", "Maximus Rigor", "https://www.instagram.com/maximusrigor/",
   
   "Vestido da noiva", "Ateliê Juliana Santos", "https://www.instagram.com/ateliejs/"
   

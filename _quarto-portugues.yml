@@ -20,6 +20,8 @@ website:
         href: mural-mensagens.qmd
       - text: "Lista de presentes"
         href: presentes.qmd
+      - text: "Equipe"
+        href: equipe.qmd        
     right: 
       - href: https://beaeju.com.br/index.html
         text: Português
