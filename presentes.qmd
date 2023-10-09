@@ -36,9 +36,19 @@ Nesta lista, cada item representa um valor que será convertido em dinheiro.
 
 ![](images/floral.jpg){.nolightbox fig-align="center" style="margin-top: -30px;"}
 
-This gift list is made up of itens that we need or desire. Each item represents a value that will be converted into cash.
+This gift list is made up of itens that we need or desire. Each item represents a value that will be converted into cash. There is also a [list at Amazon](https://www.amazon.com.br/hz/wishlist/ls/UO6CJ6NL8M7D?ref_=wl_share).
+
+
 
 Remember that **the gift is completely optional**! What we most want is the presence of people that are dear to us, and who root for our happiness!
+
+# Amazon List
+
+The gifts bought in the Amazon list will be delivered to our home :)
+
+[![](images/amazon.jpeg){fig-align="center"}](https://www.amazon.com.br/hz/wishlist/ls/UO6CJ6NL8M7D?ref_=wl_share)
+
+# General list
 :::
 
 ```{r include=FALSE}
