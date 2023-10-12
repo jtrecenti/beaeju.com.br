@@ -119,9 +119,14 @@ gerar_tabela_presentes_recebidos <- function(dados) {
 
 ::: grid
 ```{r}
-planilha_presentes_nao_recebidos |>
-  dplyr::filter(categoria == "utensilios_domesticos") |>
-  gerar_tabela_presentes()
+utensilios_domesticos <- planilha_presentes_nao_recebidos |>
+  dplyr::filter(categoria == "utensilios_domesticos") 
+
+if(nrow(utensilios_domesticos) > 0){
+    gerar_tabela_presentes(utensilios_domesticos)
+} else {
+  cat("Agradecemos muito! Recebemos os presentes listados nessa categora <3")
+}
 ```
 :::
 
@@ -149,13 +154,7 @@ planilha_presentes_nao_recebidos |>
 ## Gifts for the Bride
 :::
 
-::: grid
-```{r}
-planilha_presentes_nao_recebidos |> 
-  dplyr::filter(categoria == "mimos_noiva") |> 
-  gerar_tabela_presentes()
-```
-:::
+Agradecemos muito! Recebemos os presentes listados nessa categora <3
 
 ::: {.content-visible when-profile="portugues"}
 ## Mimos para o Noivo
@@ -198,13 +197,7 @@ planilha_presentes_nao_recebidos |>
 ## Household Appliances
 :::
 
-::: grid
-```{r}
-planilha_presentes_nao_recebidos |> 
-  dplyr::filter(categoria == "eletroportateis") |> 
-  gerar_tabela_presentes()
-```
-:::
+Agradecemos muito! Recebemos os presentes listados nessa categora <3
 
 ::: {.content-visible when-profile="portugues"}
 ## Móveis

@@ -8,8 +8,8 @@ project:
 website:
   navbar:
     left:
-      - text: "Ceremony and Wedding party"
-        href: cerimonia.qmd
+      - text: "Celebration and Wedding party"
+        href: celebracao.qmd
       - text: "Tips"
         href: dicas.qmd        
       # - text: "Confirmar presença"

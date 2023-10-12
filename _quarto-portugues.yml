@@ -8,12 +8,12 @@ project:
 website:
   navbar:
     left:
-      - text: "Cerimônia"
-        href: cerimonia.qmd
+      - text: "Celebração"
+        href: celebracao.qmd
       - text: "Dicas"
         href: dicas.qmd             
-      - text: "Confirmar presença"
-        href: confirmar-presenca.qmd
+      # - text: "Confirmar presença"
+      #   href: confirmar-presenca.qmd
       - text: "Galeria de fotos"
         href: galeria.qmd
       - text: "Mural de mensagens"
