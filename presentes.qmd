@@ -125,7 +125,7 @@ utensilios_domesticos <- planilha_presentes_nao_recebidos |>
 if(nrow(utensilios_domesticos) > 0){
     gerar_tabela_presentes(utensilios_domesticos)
 } else {
-  cat("Agradecemos muito! Recebemos os presentes listados nessa categora <3")
+  cat("Agradecemos muito! Recebemos os presentes listados nessa categoria <3")
 }
 ```
 :::
@@ -154,7 +154,7 @@ planilha_presentes_nao_recebidos |>
 ## Gifts for the Bride
 :::
 
-Agradecemos muito! Recebemos os presentes listados nessa categora <3
+Agradecemos muito! Recebemos os presentes listados nessa categoria <3
 
 ::: {.content-visible when-profile="portugues"}
 ## Mimos para o Noivo
@@ -197,7 +197,7 @@ planilha_presentes_nao_recebidos |>
 ## Household Appliances
 :::
 
-Agradecemos muito! Recebemos os presentes listados nessa categora <3
+Agradecemos muito! Recebemos os presentes listados nessa categoria <3
 
 ::: {.content-visible when-profile="portugues"}
 ## Móveis
