@@ -192,13 +192,10 @@ var x = setInterval(function() {
   // Display the result in the element with id="demo"
   document.getElementById("demo-pt").innerHTML = days_total + " dias até o casamento!";
 
-    // Display the result in the element with id="demo"
-  document.getElementById("demo-en").innerHTML =  days_total + " days until the wedding!";
 
   // If the count down is finished, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "Casamento já chegou ;)";
+  if (days =< 0) {
+    document.getElementById("demo-pt").innerHTML = "Casamento já chegou ;)";
   }
 }, 1000);
 </script>
