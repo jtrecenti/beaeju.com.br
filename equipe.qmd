@@ -14,59 +14,95 @@ toc: false
 
 ```{r}
 tab_fornecedores <- tibble::tribble(
-  ~"categoria", ~"nome", ~"url",
-  "Espaço", "Sítio São Jorge - Demarchi", "https://www.instagram.com/sitiosaojorge/",
+  ~"categoria", ~"nome", ~"url", ~"cat",
+  "Espaço", "Sítio São Jorge - Demarchi", "https://www.instagram.com/sitiosaojorge/", "no_dia",
   
-  "Decoração", "Odeon Decorações", "https://www.instagram.com/odeondecor/",
+  "Decoração", "Odeon Decorações", "https://www.instagram.com/odeondecor/", "no_dia",
   
-  "Assessoria", "Realizando Assessoria", "https://www.instagram.com/realizandoassessoria/",
-  
-  
-  "Alianças", "Monte Carlo", "https://www.instagram.com/montecarlojoias/",
-  
-  "Bem casados", "Ana Cristina Bem Casados", "https://www.instagram.com/anacristinabemcasados/",
-  
-  "Lembrança - Chinelos personalizados", "CustumiZú", "https://www.instagram.com/custumizu/",
-  
-  "Doces finos", "Cocoa Art - Amanda Borges", "https://www.instagram.com/cocoa.art.chocolates/",
+  "Assessoria", "Realizando Assessoria", "https://www.instagram.com/realizandoassessoria/", "no_dia",
   
   
-  "Fotografia", "Chocolatte Fotoarte", "https://www.instagram.com/chocolattefotoarte/",
+  "Alianças", "Monte Carlo", "https://www.instagram.com/montecarlojoias/", "antes",
   
-    "Totem de fotos", "Foto Cabine Estilo e Arte", "https://www.instagram.com/fotocabineestiloearte/",
+  "Bem casados", "Ana Cristina Bem Casados", "https://www.instagram.com/anacristinabemcasados/", "antes",
   
-      "Sousplat", "MW FESTAS", "https://www.instagram.com/mwfestas_/",
-        "Música criada para os noivos", "Dalio", "https://www.instagram.com/dalio.jp/",
+  "Lembrança - Chinelos personalizados", "CustumiZú", "https://www.instagram.com/custumizu/", "antes",
+  
+  "Doces finos", "Cocoa Art - Amanda Borges", "https://www.instagram.com/cocoa.art.chocolates/", "no_dia",
   
   
-  "Maquiagem da noiva", "Ju Toledo", "https://www.instagram.com/jutoledonoivas/",
+  "Fotografia", "Chocolatte Fotoarte", "https://www.instagram.com/chocolattefotoarte/",  "no_dia",
   
-  "Música - Cerimônia", "Toccata Coral e Orquestra", "https://www.instagram.com/coraltoccata/",
+    "Totem de fotos", "Foto Cabine Estilo e Arte", "https://www.instagram.com/fotocabineestiloearte/",  "no_dia",
   
-    "Música - Festa", "Audio7", "https://www.instagram.com/audiosete/",
+      "Sousplat", "MW FESTAS", "https://www.instagram.com/mwfestas_/",  "no_dia",
   
-  "Papelaria", "Rosa Conviteria", "https://www.instagram.com/rosaconviteria",
+        "Música criada para os noivos", "Dalio", "https://www.instagram.com/dalio.jp/", "antes",
   
-  "Presente para padrinhos e madrinhas", "Cultive mimos", "https://www.instagram.com/cultivemimos/",
   
-  "Porta aliança", "Meire e Cris | Bordado à mão", "https://www.instagram.com/borda.vieira/",
+  "Maquiagem da noiva", "Ju Toledo", "https://www.instagram.com/jutoledonoivas/",  "no_dia",
   
-  "Recreação infantil", "Bambalalão Recreação", "https://www.instagram.com/bambalalao.recreacao/",
+  "Música - Cerimônia", "Toccata Coral e Orquestra", "https://www.instagram.com/coraltoccata/", "no_dia",
+  
+    "Música - Festa", "Audio7", "https://www.instagram.com/audiosete/", "no_dia",
+  
+  "Papelaria", "Rosa Conviteria", "https://www.instagram.com/rosaconviteria", "antes",
+  
+  "Presente para padrinhos e madrinhas", "Cultive mimos", "https://www.instagram.com/cultivemimos/", "antes",
+  
+  "Porta aliança", "Meire e Cris | Bordado à mão", "https://www.instagram.com/borda.vieira/", "antes",
+  
+  "Recreação infantil", "Bambalalão Recreação", "https://www.instagram.com/bambalalao.recreacao/",  "no_dia",
   
   # "Sapato da noiva", "Durval Calçados", "https://www.instagram.com/durvalcalcados/",
   
-  "Traje do noivo e padrinhos", "Maximus Rigor", "https://www.instagram.com/maximusrigor/",
+  "Traje do noivo e padrinhos", "Maximus Rigor", "https://www.instagram.com/maximusrigor/", "antes",
   
-  "Vestido da noiva", "Ateliê Juliana Santos", "https://www.instagram.com/ateliejs/"
+  "Vestido da noiva", "Ateliê Juliana Santos", "https://www.instagram.com/ateliejs/", "antes",
+  
+  "Unha", "Castelinho das unhas", "https://www.instagram.com/castelinhodasunhas_/", "noiva",
+  
+  "Massagem", "Patrícia Faloppa", "https://instagram.com/faloppaestetica", 
+  "noiva",
+  
+  "Cuidados com os cachos", "Paloma Kolbe Cachos", "https://instagram.com/palomakolbecachos",  "noiva"
   
 
   
-)
-
-tab_fornecedores |> 
+) |> 
   dplyr::mutate(link = glue::glue("[{nome}]({url})")) |> 
+    dplyr::arrange(categoria) 
+
+
+```
+
+
+## Estarão lá no dia
+
+```{r}
+tab_fornecedores |> 
+  dplyr::filter(cat == "no_dia") |> 
   dplyr::select(categoria, link) |> 
-  dplyr::arrange(categoria) |> 
   knitr::kable(col.names = c("Categoria", "Fornecedor"))
 ```
 
+
+
+## Cuidados com a noiva
+
+```{r}
+tab_fornecedores |> 
+  dplyr::filter(cat == "noiva") |> 
+  dplyr::select(categoria, link) |> 
+  knitr::kable(col.names = c("Categoria", "Fornecedor"))
+```
+
+
+## Entregue antes :)
+
+```{r}
+tab_fornecedores |> 
+  dplyr::filter(cat == "antes") |> 
+  dplyr::select(categoria, link) |> 
+  knitr::kable(col.names = c("Categoria", "Fornecedor"))
+```
