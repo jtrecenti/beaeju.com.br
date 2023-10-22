@@ -20,15 +20,12 @@ Lembre-se que **o presente é completamente opcional**! O que mais queremos é a
 
 Existem duas listas de presente: uma lista na [**Amazon**](https://www.amazon.com.br/hz/wishlist/ls/UO6CJ6NL8M7D?ref_=wl_share), e uma lista geral feita de produtos desejados, onde cada item representa um valor que será convertido em dinheiro.
 
-# Lista da Amazon
+## Lista da Amazon
 
 Nesta lista, os itens comprados chegarão na nossa casa!
 
 [![](images/amazon.jpeg){fig-align="center"}](https://www.amazon.com.br/hz/wishlist/ls/UO6CJ6NL8M7D?ref_=wl_share)
 
-# Lista geral
-
-Nesta lista, cada item representa um valor que será convertido em dinheiro.
 :::
 
 ::: {.content-visible when-profile="english"}
@@ -42,13 +39,11 @@ This gift list is made up of itens that we need or desire. Each item represents 
 
 Remember that **the gift is completely optional**! What we most want is the presence of people that are dear to us, and who root for our happiness!
 
-# Amazon List
+## Amazon List
 
 The gifts bought in the Amazon list will be delivered to our home :)
 
 [![](images/amazon.jpeg){fig-align="center"}](https://www.amazon.com.br/hz/wishlist/ls/UO6CJ6NL8M7D?ref_=wl_share)
-
-# General list
 :::
 
 ```{r include=FALSE}
@@ -109,104 +104,9 @@ gerar_tabela_presentes_recebidos <- function(dados) {
 
 ```
 
-::: {.content-visible when-profile="portugues"}
-## Utensílios domésticos
-:::
-
-::: {.content-visible when-profile="english"}
-## Household Utensils
-:::
-
-Agradecemos muito! Recebemos os presentes listados nessa categoria <3
-
 
 ::: {.content-visible when-profile="portugues"}
-## Cama, mesa e banho
-:::
-
-::: {.content-visible when-profile="english"}
-## Bed & Bath
-:::
-
-::: grid
-```{r}
-planilha_presentes_nao_recebidos |>
-  dplyr::filter(categoria == "cama_mesa_banho") |>
-  gerar_tabela_presentes()
-```
-:::
-
-::: {.content-visible when-profile="portugues"}
-## Mimos para a Noiva
-:::
-
-::: {.content-visible when-profile="english"}
-## Gifts for the Bride
-:::
-
-Agradecemos muito! Recebemos os presentes listados nessa categoria <3
-
-::: {.content-visible when-profile="portugues"}
-## Mimos para o Noivo
-:::
-
-::: {.content-visible when-profile="english"}
-## Gifts for the Groom
-:::
-
-::: grid
-```{r}
-planilha_presentes_nao_recebidos |> 
-  dplyr::filter(categoria == "mimos_noivo") |> 
-  gerar_tabela_presentes()
-```
-:::
-
-::: {.content-visible when-profile="portugues"}
-## Lua de Mel
-:::
-
-::: {.content-visible when-profile="english"}
-## Honeymoon
-:::
-
-::: grid
-```{r}
-planilha_presentes_nao_recebidos |> 
-  dplyr::filter(categoria == "luademel") |> 
-  dplyr::arrange(dplyr::desc(estimativa_preco)) |> 
-  gerar_tabela_presentes()
-```
-:::
-
-::: {.content-visible when-profile="portugues"}
-## Eletroportáteis
-:::
-
-::: {.content-visible when-profile="english"}
-## Household Appliances
-:::
-
-Agradecemos muito! Recebemos os presentes listados nessa categoria <3
-
-::: {.content-visible when-profile="portugues"}
-## Móveis
-:::
-
-::: {.content-visible when-profile="english"}
-## Furniture
-:::
-
-::: grid
-```{r}
-planilha_presentes_nao_recebidos |> 
-  dplyr::filter(categoria == "moveis") |> 
-  gerar_tabela_presentes()
-```
-:::
-
-::: {.content-visible when-profile="portugues"}
-# Dinheiro
+## Dinheiro
 
 Caso queira enviar algum valor diferente dos valores dos itens acima, ou deixar para que os noivos escolham o presente, você pode utilizar o código PIX abaixo e enviar o valor que quiser!
 
@@ -220,7 +120,7 @@ Caso queira enviar algum valor diferente dos valores dos itens acima, ou deixar 
 :::
 
 ::: {.content-visible when-profile="english"}
-# Money
+## Money
 
 If you want to gift us a iten, or leave the choice for us, you can transfer the money with [Paypal](https://www.paypal.com/) to: **beatriz.milz\@hotmail.com**".
 :::
