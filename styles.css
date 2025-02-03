@@ -209,3 +209,12 @@ h2, .h2 {
   background-color: none white !important;
   height: auto !important;
 }
+
+iframe {
+    aspect-ratio: 16 / 9;
+    width: 100% !important;
+}
+.container-iframe {
+    display: flex;
+    justify-content: center;
+}
