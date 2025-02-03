@@ -3,25 +3,33 @@ title: "Vídeos"
 toc: false
 ---
 
+
 Os vídeos foram produzidos pela [Chocolatte FotoArte](https://www.chocolatte-fotoarte.com/).
 
 ### Ensaio Pré-wedding (6 minutos)
 
+<div class="container-iframe">
 <center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5v5fowzhn8E?si=Ohp0-R7fTkGn6BAA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/5v5fowzhn8E?si=Ohp0-R7fTkGn6BAA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </center>
+</div> 
 
 ### Casamento - vídeo curto (11 minutos)
 
 Na segunda metade do vídeo, a música tocada foi produzida especialmente para o casal, pelo [Dálio JP](https://www.instagram.com/dalio.jp/).
 
+<div class="container-iframe">
 <center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_M_UpGmKJuM?si=xvBRefeHrmZD5nZR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/_M_UpGmKJuM?si=xvBRefeHrmZD5nZR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </center>
+</div>
 
 
 ### Casamento - vídeo completo  (49 minutos)
 
+
+<div class="container-iframe">
 <center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6QZhbTw8GjY?si=QmO9FhXbFbL-aYvr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/6QZhbTw8GjY?si=QmO9FhXbFbL-aYvr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </center>
+</div>
