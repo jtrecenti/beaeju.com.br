@@ -21,7 +21,9 @@ website:
       - text: "Lista de presentes"
         href: presentes.qmd
       - text: "Equipe"
-        href: equipe.qmd        
+        href: equipe.qmd   
+      - text: "Videos"
+        href: videos.qmd             
     right: 
       - href: https://beaeju.com.br/index.html
         text: Português

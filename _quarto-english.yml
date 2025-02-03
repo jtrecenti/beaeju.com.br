@@ -20,6 +20,8 @@ website:
         href: mural-mensagens.qmd
       - text: "Wedding gifts"
         href: presentes.qmd
+      - text: "Videos"
+        href: videos.qmd        
     right: 
       - href: https://beaeju.com.br/index.html
         text: Português
